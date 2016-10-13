@@ -1,5 +1,5 @@
 
-package com.cc.core.entity;
+package com.cc.core.entity.good;
 
 import java.io.Serializable;
 import java.util.Date;

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:tx="http://www.springframework.org/schema/tx" xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd
+        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.2.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <!-- 配置自动扫描的包（包括其下子包） -->
+    <context:component-scan base-package="com.cc.core"/>
+
+    <!-- 配置数据源 -->
+    <!-- 简单搭建先不用连接池了，一般会把数据库配置文件单独放在一个properties文件 -->
+    <context:property-placeholder location="classpath:jdbc.properties"/>
+
+    <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
+        <property name="username" value="${jdbc.username}"/>
+        <property name="password" value="${jdbc.password}"/>
+        <property name="url" value="${jdbc.url}"/>
+        <property name="driverClassName" value="${jdbc.driverClassName}"/>
+    </bean>
+
+
+    <bean id="sessionFactory"  class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+        <property name="packagesToScan" value="com.cc.core.entity"/>
+        <property name="dataSource" ref="dataSource"/>
+        <property name="hibernateProperties">
+            <props>
+                <prop key="hibernate.hbm2ddl.auto">update</prop>
+                <prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+                <prop key="hibernate.show_sql">true</prop>
+                <!--<prop key="hibernate.current_session_context_class">thread</prop>-->
+            </props>
+        </property>
+    </bean>
+
+    <!-- 配置Hibernate事务管理器 -->
+    <bean id="transactionManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+
+    <!-- 配置事务异常封装 -->
+    <bean id="persistenceExceptionTranslationPostProcessor"
+          class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor"/>     <!--  声明式容器事务管理 ,transaction-manager指定事务管理器为transactionManager -->
+
+    <tx:annotation-driven transaction-manager="transactionManager"/>
+   <!-- <tx:advice id="txAdvice" transaction-manager="transactionManager">
+        <tx:attributes>
+            <tx:method name="add*" propagation="REQUIRED"/>
+            <tx:method name="get*" propagation="REQUIRED"/>
+            <tx:method name="*" read-only="true"/>
+        </tx:attributes>
+    </tx:advice>
+
+    <aop:config expose-proxy="true">         &lt;!&ndash; 只对业务逻辑层实施事务 &ndash;&gt;
+        <aop:pointcut id="txPointcut"
+                      expression="execution(* com.cc.core.service..*.*(..))"/>
+        &lt;!&ndash; Advisor定义，切入点和通知分别为txPointcut、txAdvice &ndash;&gt;
+        <aop:advisor pointcut-ref="txPointcut" advice-ref="txAdvice"/>
+    </aop:config>-->
+
+
+
+    <!--  &lt;!&ndash; 配置JPA的EntityManagerFactory &ndash;&gt;
+      <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+          <property name="dataSource" ref="dataSource"/>
+          <property name="jpaVendorAdapter">
+              <bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter"/>
+          </property>
+          &lt;!&ndash; jpa扫描entity的包 &ndash;&gt;
+          <property name="packagesToScan" value="com.cc.core.entity"/>
+          <property name="jpaProperties">
+              <props>
+                  &lt;!&ndash; 二级缓存 &ndash;&gt;
+                  <prop key="hibernate.cache.region.factory_class">org.hibernate.cache.ehcache.EhCacheRegionFactory</prop>
+                  <prop key="net.sf.ehcache.configurationResourceName">ehcache.xml</prop>
+                  &lt;!&ndash; 生成的数据表的列的映射策略 &ndash;&gt;
+                  <prop key="hibernate.ejb.naming_strategy">org.hibernate.cfg.ImprovedNamingStrategy</prop>
+                  &lt;!&ndash; hibernate 基本属性 &ndash;&gt;
+                  <prop key="hibernate.dialect">org.hibernate.dialect.MySQL5InnoDBDialect</prop>
+                  <prop key="hibernate.show_sql">true</prop>
+                  <prop key="hibernate.format_sql">true</prop>
+                  <prop key="hibernate.hbm2ddl.auto">update</prop>
+              </props>
+          </property>
+      </bean>
+
+      &lt;!&ndash; 配置事务管理器 &ndash;&gt;
+      <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+          <property name="entityManagerFactory" ref="entityManagerFactory"/>
+      </bean>
+
+      &lt;!&ndash; 配置支持注解的事务 &ndash;&gt;
+      <tx:annotation-driven transaction-manager="transactionManager"/>
+
+      &lt;!&ndash; 配置SpringData ，也就是扫描Repository的包&ndash;&gt;
+      <jpa:repositories base-package="com.cc.core.dao"
+                        entity-manager-factory-ref="entityManagerFactory">
+      </jpa:repositories>-->
+</beans>
