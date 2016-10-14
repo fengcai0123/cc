@@ -7,17 +7,24 @@ import org.springframework.stereotype.Repository;
 
 import javax.annotation.Resource;
 import java.io.Serializable;
+import java.lang.reflect.ParameterizedType;
 import java.util.List;
 
 /**
  * Created by yonghuo.chen on 16/10/13.
  */
-@Repository("baseDao")
-@SuppressWarnings("all")
 public  class BaseDaoImpl<T> implements BaseDao<T> {
 
     @Resource(name = "sessionFactory")
     private SessionFactory sessionFactory;
+
+    private Class<T> entityClass; //获取实体类
+
+    public BaseDaoImpl() {
+        //得到泛型化超类(返回值为参数化类型)
+        ParameterizedType type= (ParameterizedType)getClass().getGenericSuperclass();
+        entityClass= (Class<T>) type.getActualTypeArguments()[0];
+    }
 
     public SessionFactory getSessionFactory() {
         return sessionFactory;

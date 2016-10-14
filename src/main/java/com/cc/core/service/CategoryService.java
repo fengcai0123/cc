@@ -9,5 +9,8 @@ import java.util.List;
  */
 public interface CategoryService {
     List<Category> find(String sql);
-    Category findCategoryById(int id);
+    Category findCategoryById(long sql);
+    List<Category>  findCategoryListById(long id);
+
+    List<Category> findCategoryListByPropertyName(String cateName);
 }

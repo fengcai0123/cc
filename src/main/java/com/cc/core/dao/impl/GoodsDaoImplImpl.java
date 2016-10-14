@@ -14,13 +14,14 @@ import java.util.List;
  * Created by yonghuo.chen on 16/10/10.
  */
 @Repository("goodsDao")
-public class GoodsDaoImplImpl extends BaseDaoImpl implements GoodsDao {
+public class GoodsDaoImplImpl  implements GoodsDao {
     @Override
     public List<Goods> findAll( String  entityName) {
-        String hql="from "+entityName;
+      /*  String hql="from "+entityName;
         Query query= HibernateUtils.getSessionFactory().getCurrentSession().createQuery(hql);
         List<Goods> goodsList=query.list();
-        return goodsList;
+        return goodsList;*/
+        return  null;
     }
 public  List<Goods> find(String hql){
 
