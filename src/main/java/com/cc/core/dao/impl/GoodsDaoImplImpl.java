@@ -6,6 +6,8 @@ import com.cc.core.common.Pager;
 import com.cc.core.dao.GoodsDao;
 import com.cc.core.entity.good.Goods;
 import org.hibernate.Query;
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -15,23 +17,64 @@ import java.util.List;
  */
 @Repository("goodsDao")
 public class GoodsDaoImplImpl  implements GoodsDao {
-    @Override
-    public List<Goods> findAll( String  entityName) {
-      /*  String hql="from "+entityName;
-        Query query= HibernateUtils.getSessionFactory().getCurrentSession().createQuery(hql);
-        List<Goods> goodsList=query.list();
-        return goodsList;*/
-        return  null;
-    }
-public  List<Goods> find(String hql){
 
-    return null;
-}
+    @Autowired
+    private SessionFactory sessionFactory;
+
+    public SessionFactory getSessionFactory() {
+        return sessionFactory;
+    }
+
+    public void setSessionFactory(SessionFactory sessionFactory) {
+        this.sessionFactory = sessionFactory;
+    }
+
+    @Override
+    public void insert(Goods goods) {
+       /* String hql="insert into Goods (categoryId,name,number,weight,marketPrice,shopPrice," +
+            "isOnSale,detailNumber,mainNumber)" +
+            "values(categoryId,name,number,weight,marketPrice,shopPrice,\" +\n" +
+            "            \"isOnSale,detailNumber,mainNumber)";*/
+         sessionFactory.getCurrentSession().save(goods);
+
+    }
+
+    @Override
+    public void delete(long id) {
+        String hql="delete from Goods g where g.id=:gid";
+        Query query=sessionFactory.getCurrentSession().createQuery(hql);
+        query.setParameter("gid",id);
+        query.uniqueResult();
+    }
+
+    @Override
+    public List<Goods> findAll() {
+        String hql="from Goods g where g.categoryId>14";
+        Query query=sessionFactory.getCurrentSession().createQuery(hql);
+        return query.list();
+    }
+
+    @Override
+    public Goods findById(long id) {
+        String hql ="from Goods g where g.id=:gid";
+        Query query=sessionFactory.getCurrentSession().createQuery(hql);
+        query.setParameter("gid",id);
+        return (Goods) query.uniqueResult();
+    }
+
+    @Override
+    public List<Goods> findListByCateId(long cateId) {
+        String hql="from Goods g where g.categoryId=:cid";
+        Query query =sessionFactory.getCurrentSession().createQuery(hql);
+        query.setParameter("cid",cateId);
+        return query.list();
+    }
+
     @Override
     public Pager  findByPager(String sql, String  entityName,int startPage,int pageSize) {
         int pagerTotal=1;
         String hql="from "+entityName;
-        Query query= HibernateUtils.getSessionFactory().getCurrentSession().createQuery(hql);
+        Query query=sessionFactory.getCurrentSession().createQuery(hql);
         List<Goods> goodsList=query.setFirstResult(startPage)
                                     .setMaxResults(pageSize)
                                     .list();

@@ -18,6 +18,13 @@ import java.util.List;
 public class CategoryServiceImpl implements CategoryService{
     @Autowired
     private CategoryDao categoryDao;
+
+    @Override
+    public void save(Category category) {
+        categoryDao.save(category);
+    }
+
+
     @Override
     public List<Category> find(String sql) {
         List<Category> categoryList=categoryDao.findCategory(sql);
@@ -31,7 +38,7 @@ public class CategoryServiceImpl implements CategoryService{
 
     @Override
     public List<Category> findCategoryListById(long id) {
-        List<Category>categoryList=categoryDao.findCategoryById(id);
+        List<Category>categoryList=categoryDao.findCategoryListById(id);
         return categoryList;
     }
 

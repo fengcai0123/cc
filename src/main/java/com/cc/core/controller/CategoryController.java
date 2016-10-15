@@ -29,5 +29,9 @@ public class CategoryController {
         return "categoryList";
     }
 
+    public String add(){
+
+        return "add";
+    }
 }
 

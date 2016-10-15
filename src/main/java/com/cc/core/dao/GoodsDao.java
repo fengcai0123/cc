@@ -10,6 +10,14 @@ import java.util.List;
  */
 public interface GoodsDao {
 
-    List<Goods> findAll( String entityName);
+    void insert(Goods goods);
+
+    void delete(long id);
+
+    Goods findById(long id);
+
+    List<Goods> findListByCateId(long cateId);
     Pager findByPager(String sql ,String entityName, int startPage, int pageSize);
+    List<Goods> findAll();
+
 }

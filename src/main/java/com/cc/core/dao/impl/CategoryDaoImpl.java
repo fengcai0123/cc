@@ -16,19 +16,24 @@ import java.util.List;
  * Created by yonghuo.chen on 16/10/14.
  */
 @Repository(value = "categoryDao")
-public class CategoryDaoImpl extends BaseDaoImpl<Category> implements CategoryDao {
+public class CategoryDaoImpl  implements CategoryDao {
 
     @Autowired
      private SessionFactory sessionFactory;
 
-    @Override
+
     public SessionFactory getSessionFactory() {
         return sessionFactory;
     }
 
-    @Override
+
     public void setSessionFactory(SessionFactory sessionFactory) {
         this.sessionFactory = sessionFactory;
+    }
+
+    @Override
+    public void save(Category category) {
+        sessionFactory.getCurrentSession().save(category);
     }
 
     @Override
@@ -49,8 +54,8 @@ public class CategoryDaoImpl extends BaseDaoImpl<Category> implements CategoryDa
         String hql="from Category c where c.id=:cid";
         Query query=sessionFactory.getCurrentSession().createQuery(hql);
         query.setParameter("cid",sql);
-        List<Category>categoryList=query.list();
-        return categoryList;
+        return  query.list();
+
     }
 
     @Override
@@ -70,7 +75,7 @@ public class CategoryDaoImpl extends BaseDaoImpl<Category> implements CategoryDa
         String hql="from Category c where  c.name=:propertyName";
         Query query=sessionFactory.getCurrentSession().createQuery(hql);
         query.setParameter("propertyName",propertyValue);
-        List<Category> categoryList=query.list();
-        return categoryList;
+        return query.list();
     }
+
 }

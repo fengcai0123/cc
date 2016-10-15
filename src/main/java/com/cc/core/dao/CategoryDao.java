@@ -17,4 +17,6 @@ public interface CategoryDao {
     List<Category> findAll(String sql);
 
     List<Category> findByProperties(String propertyValue);
+
+    void save(Category category);
 }

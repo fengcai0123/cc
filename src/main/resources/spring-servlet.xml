@@ -22,4 +22,12 @@
         <property name="prefix" value="/WEB-INF/jsp/"/>
         <property name="suffix" value=".jsp"/>
     </bean>
+
+    <!--防止重复提交表单 拦截器配置-->
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <mvc:mapping path="/**"/>
+            <bean class="com.cc.core.filter.TokenInterceptor"/>
+        </mvc:interceptor>
+    </mvc:interceptors>
  </beans>
