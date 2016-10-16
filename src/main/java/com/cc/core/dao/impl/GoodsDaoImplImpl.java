@@ -42,9 +42,9 @@ public class GoodsDaoImplImpl  implements GoodsDao {
     @Override
     public void delete(long id) {
         String hql="delete from Goods g where g.id=:gid";
+        System.out.print("dao del"+hql);
         Query query=sessionFactory.getCurrentSession().createQuery(hql);
-        query.setParameter("gid",id);
-        query.uniqueResult();
+        query.setParameter("gid",id).executeUpdate();
     }
 
     @Override

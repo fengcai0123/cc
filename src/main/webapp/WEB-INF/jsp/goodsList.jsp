@@ -4,15 +4,16 @@
 <html>
 <head>
     <title>Title</title>
-    <script src="http://code.jquery.com/jquery-1.3.2.min.js"></script>
+    <script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
     <script>
         function del() {
+        var ann = $("#del_goods").val();
             $.ajax({
+               type: "post",
+            url: "/goods/del",
                 type: "post",
-                url: "/goods/del",
-                data: "gid="+$("#del_goods").val(),
-                dataType:'json',
-                async: false,
+                dataType:"json",
+                data: "gid="+ann,
                 error: function (request) {
                     alert("页面ajax请求错误");
                 },
@@ -40,6 +41,7 @@
                 <th >商城价</th>
                 <th >详情图数量</th>
                 <th >主图数量</th>
+                <th >主图上传</th>
                 <th>操作</th>
             </tr>
             </thead>
@@ -57,13 +59,13 @@
                     <td >${goodItem.shopPrice}</td>
                     <td >${goodItem.detailNumber}</td>
                     <td >${goodItem.mainNumber}</td>
-                    <td ><input onclick="del();" type="submit"  name="${goodItem.id}" value="删除"/></td>
+                    <td ><a href="/goods/del?gid=${goodItem.id}">删除</a></td>
                 </tr>
                 </tbody>
             </c:forEach>
         </table>
     </div>
-    <form class="form-inline " role="form" action="/goods/add">
+    <form class="form-inline " role="form" action="/goods/add" enctype="multipart/form-data">
         <div class="row center-block">
             <input type="text" class="col-lg-2" name="categoryId">
 
@@ -76,6 +78,7 @@
             <input type="text" class="col-lg-1" name="detailNumber">
 
             <input type="text" class="col-lg-1" name="mainNumber">
+            <input type="file" name="file">
 
         </div>
         <div><input type="submit" value="添加" ></div>
