@@ -1,23 +1,25 @@
 <%@ page contentType="text/html; UTF-8"  language="java" pageEncoding="UTF-8" %>
 <%@ taglib prefix="C" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<script type="text/javascript">var ctx = '${ctx}', domain_image = '${domain_image}', domain_static = '${domain_static}';</script>
 <html>
 <head>
     <title>Title</title>
-    <script src="http://code.jquery.com/jquery-1.3.2.min.js"></script>
+    <script src="http://code.jquery.com/jquery-1.4.2.min.js"></script>
+   <%-- <script src="../assets/js/jquery-1.4.2.min.js"></script>--%>
     <script>
-        function del() {
+        function del(gid) {
             $.ajax({
                 type: "post",
                 url: "/goods/del",
-                data: "gid="+$("#del_goods").val(),
+                data: "gid="+gid,
                 dataType:'json',
                 async: false,
-                error: function (request) {
-                    alert("页面ajax请求错误");
+                success:function(callbackdata){
+                    alert("success");
                 },
-                success: function (data) {
-                    alert("ajax成功")
+                error:function (data, status, e){
+                    alert("error");
                 }
             });
         };
@@ -46,7 +48,7 @@
 
             <c:forEach items="${goodsList}" var="goodItem">
                 <tbody>
-                <tr>
+                <tr id="goodItem" >
                     <td id="#del_goods">${goodItem.id}</td>
                     <td >${goodItem.categoryId}</td>
                     <td >${goodItem.sn}</td>
@@ -57,7 +59,7 @@
                     <td >${goodItem.shopPrice}</td>
                     <td >${goodItem.detailNumber}</td>
                     <td >${goodItem.mainNumber}</td>
-                    <td ><input onclick="del();" type="submit"  name="${goodItem.id}" value="删除"/></td>
+                    <td ><input onclick="del('${goodItem.id}');" type="submit"  name="${goodItem.id}" value="删除"/></td>
                 </tr>
                 </tbody>
             </c:forEach>

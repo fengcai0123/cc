@@ -28,14 +28,36 @@ public class GoodController {
     }*/
 
     @RequestMapping("/list")
-
     public String goodList(Model model){
-        /*long cateId=2;
-        List<Goods> goodsList = goodsService.findListByCateId(cateId);*/
         List<Goods> goodsList = goodsService.findAll();
         model.addAttribute("goodsList",goodsList);
         return "goodsList";
     }
+    @RequestMapping("/categoryGoodsList")
+    public String categoryGoodList(Model model){
+        /*long cateId=2;
+        List<Goods> goodsList = goodsService.findListByCateId(cateId);*/
+        List<Goods> goodsList = goodsService.findAll();
+        model.addAttribute("goodsList",goodsList);
+        return "categorygoodsList";
+    }
+
+    @RequestMapping("/detail")
+    public String detail(Model model){
+        /*long cateId=2;
+        List<Goods> goodsList = goodsService.findListByCateId(cateId);*/
+        List<Goods> goodsList = goodsService.findAll();
+        model.addAttribute("goodsList",goodsList);
+        return "goodsDetail";
+    }
+
+    @RequestMapping("/cart")
+    public String cart(Model model){
+        List<Goods> goodsList = goodsService.findAll();
+        model.addAttribute("goodsList",goodsList);
+        return "cart";
+    }
+
     @RequestMapping("/add")
     /*@Token(save = true)*/
     public String add(@RequestParam("categoryId")long categId,@RequestParam("name")String name,
@@ -62,7 +84,7 @@ public class GoodController {
     @RequestMapping("/del")
     public String del(@RequestParam("gid")long gid, Model model){
         if(String.valueOf(gid)!=null &&String.valueOf(gid)!=""){
-            System.out.println("gid"+gid);
+            System.out.println("gid="+gid);
             goodsService.del(gid);
         }
         else{
