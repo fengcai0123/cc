@@ -41,14 +41,15 @@ public class GoodsDaoImplImpl  implements GoodsDao {
 
     @Override
     public void delete(long id) {
-        String hql="delete from Goods g where g.id="+id;
+        String hql="delete from Goods g where g.id=:gid";
         Query query=sessionFactory.getCurrentSession().createQuery(hql);
-        query.executeUpdate();
+        query.setParameter("gid",id);
+        query.uniqueResult();
     }
 
     @Override
     public List<Goods> findAll() {
-        String hql="from Goods g where g.categoryId>2";
+        String hql="from Goods g where g.categoryId>14";
         Query query=sessionFactory.getCurrentSession().createQuery(hql);
         return query.list();
     }
