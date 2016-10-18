@@ -1,7 +1,6 @@
-package com.cc.core.controller;
+package com.cc.core.controller.profile;
 
 import com.cc.core.entity.good.Goods;
-import com.cc.core.filter.Token;
 import com.cc.core.service.GoodsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -15,8 +14,8 @@ import java.util.List;
  * Created by yonghuo.chen on 16/10/11.
  */
 @Controller
-@RequestMapping("/goods")
-public class GoodController {
+@RequestMapping("/user")
+public class ProfileController {
     @Autowired
     private GoodsService goodsService;
 
@@ -27,11 +26,11 @@ public class GoodController {
         return "index";
     }*/
 
-    @RequestMapping("/list")
+    @RequestMapping("/profile")
     public String goodList(Model model){
         List<Goods> goodsList = goodsService.findAll();
         model.addAttribute("goodsList",goodsList);
-        return "goodsList";
+        return "profile";
     }
 
     @RequestMapping("/categoryGoodsList")
