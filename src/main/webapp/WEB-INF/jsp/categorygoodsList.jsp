@@ -1,13 +1,13 @@
+<!DOCTYPE >
 <%@ page contentType="text/html; UTF-8" language="java" pageEncoding="UTF-8" %>
 <%@ taglib prefix="C" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <script
-    type="text/javascript">var ctx = '${ctx}', domain_image = '${domain_image}', domain_static = '${domain_static}';</script>
+type="text/javascript">var ctx = '${ctx}', domain_image = '${domain_image}', domain_static = '${domain_static}';</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="http://apps.bdimg.com/libs/jquerymobile/1.4.5/jquery.mobile-1.4.5.min.css">
-<script src="http://apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
-<script src="http://apps.bdimg.com/libs/jquerymobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 <html>
 <head>
     <title>Title</title>
@@ -33,9 +33,10 @@
 </head>
 <body>
 <script>
-    function goodsDetail() {
+    function goodsDetail(gid) {
         $.mobile.changePage( "/goods/detail", {
             type: "post",
+            data:"gid="+gid,
             changeHash: false
         });
     }
@@ -45,7 +46,7 @@
         <div data-role="main" class="ui-content">
             <h2>分类</h2>
             <c:forEach items="${goodsList}" var="goodItem">
-                <ul data-role="listview" data-autodividers="true" data-inset="true" onclick="javaScript:goodsDetail()">
+                <ul data-role="listview" data-autodividers="true" data-inset="true" onclick="javaScript:goodsDetail('${goodItem.id}')">
                     <li><a href="#">
                         <img src="/assets/images/products/01/main/01_0.png">
                         <h3>${goodItem.name}</h3>
@@ -63,8 +64,8 @@
                 <ul>
                     <li><a href="${ctx}/goods/categoryGoodsList" class="ui-btn-active" rel="external">首页</a></li>
                     <li><a href="${ctx}/goods/cart" rel="external">购物车</a></li>
-                    <li><a href="#" rel="external">订单</a></li>
-                    <li><a href="#" rel="external">搜索</a></li>
+                    <li><a href="#"  >订单</a></li>
+                    <li><a href="#"  >我的</a></li>
                 </ul>
             </div>
         </div>

@@ -1,12 +1,17 @@
 package com.cc.core.controller.profile;
 
+import com.alibaba.fastjson.JSONArray;
+import com.cc.core.dao.order.OrderGoodsDao;
 import com.cc.core.entity.good.Goods;
+import com.cc.core.entity.order.OrderGoods;
 import com.cc.core.service.GoodsService;
+import com.cc.core.service.OrderGoodsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.List;
 
@@ -18,6 +23,8 @@ import java.util.List;
 public class ProfileController {
     @Autowired
     private GoodsService goodsService;
+    @Autowired
+    private OrderGoodsService orderGoodsService;
 
  /*   @RequestMapping("/helloWorld")
     public String helloWorld(Model model){
@@ -26,23 +33,55 @@ public class ProfileController {
         return "index";
     }*/
 
-    @RequestMapping("/profile")
-    public String goodList(Model model){
-        List<Goods> goodsList = goodsService.findAll();
-        model.addAttribute("goodsList",goodsList);
-        return "profile";
+    @RequestMapping("/user")
+    public String allOrderGoodList(Model model){
+        long userId=92;
+        List<OrderGoods> orderGoodsList = orderGoodsService.findAllOrderGoodsList(userId);
+        model.addAttribute("orderGoodsList",orderGoodsList);
+        model.addAttribute("orderGoodsWaitPayList",orderGoodsList);
+        for(int i=0;i<orderGoodsList.size();i++) {
+            OrderGoods category=orderGoodsList.get(i);
+            System.out.println("orderGoodControllerTest:" +category.getGoodsName()+"  id="+category.getOrderId());
+        }
+        return "user";
     }
 
-    @RequestMapping("/categoryGoodsList")
+    @ResponseBody
+    @RequestMapping(value = "/waitPay",produces = "text/html;charset=UTF-8")
+    public String weitPayGoodList(Model model){
+        long userId=103;
+        List<OrderGoods> orderGoodsList = orderGoodsService.findAllOrderGoodsList(userId);
+        model.addAttribute("orderGoodsList",orderGoodsList);
+        for(int i=0;i<orderGoodsList.size();i++) {
+            OrderGoods category=orderGoodsList.get(i);
+            System.out.println("orderGoodControllerweitPayTest:" +category.getGoodsName()+"  id="+category.getOrderId());
+        }
+        return JSONArray.toJSONString(orderGoodsList);
+    }
+
+    @ResponseBody
+    @RequestMapping(value = "/allOrder",produces = "text/html;charset=UTF-8")
+    public String allOrderGoodLists(Model model){
+        long userId=92;
+        List<OrderGoods> orderGoodsList = orderGoodsService.findAllOrderGoodsList(userId);
+        model.addAttribute("orderGoodsList",orderGoodsList);
+        for(int i=0;i<orderGoodsList.size();i++) {
+            OrderGoods category=orderGoodsList.get(i);
+            System.out.println("orderGoodControllerAllOrderTest:" +category.getGoodsName()+"  id="+category.getOrderId());
+        }
+        return JSONArray.toJSONString(orderGoodsList);
+    }
+
+ /*   @RequestMapping("/categoryGoodsList")
     public String categoryGoodsList(Model model){
-        /*long cateId=2;
-        List<Goods> goodsList = goodsService.findListByCateId(cateId);*/
+        *//*long cateId=2;
+        List<Goods> goodsList = goodsService.findListByCateId(cateId);*//*
         List<Goods> goodsList = goodsService.findAll();
         model.addAttribute("goodsList",goodsList);
         return "categoryGoodsList";
     }
     @RequestMapping("/add")
-    /*@Token(save = true)*/
+    *//*@Token(save = true)*//*
     public String add(@RequestParam("categoryId")long categId,@RequestParam("name")String name,
                       @RequestParam("number")int number,@RequestParam("weight")double weight,
                       @RequestParam("marketPrice")double marketPrice,@RequestParam("shopPrice")double shopPrice,
@@ -83,5 +122,5 @@ public class ProfileController {
         Goods goods = goodsService.findById(gid);
         model.addAttribute("goods",goods);
         return "goodsDetail";
-    }
+    }*/
 }

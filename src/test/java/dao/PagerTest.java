@@ -27,12 +27,12 @@ public class PagerTest {
 @Test
 @Transactional
   public  void testQueryAll(){
-    String sql=" from Goods g where g.id < 100";
+  /*  String sql=" from Goods g where g.id < 100";
     List<Goods> goodsList=baseDao.find(sql);
     for(int i=0;i<goodsList.size();i++) {
         Goods goods1= goodsList.get(i);
         System.out.print("产品名称" +goods1.getName()+"\n");
-    }
+    }*/
   }
     /*@Test
     public void testQueryPager(){

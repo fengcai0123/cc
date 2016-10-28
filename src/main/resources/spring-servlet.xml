@@ -39,5 +39,7 @@
     </mvc:interceptors>
 
     <!--静态资源文件配置-->
-    <mvc:resources mapping="/assets/**" location="/WEB-INF/assets/"/>
+    <mvc:resources location="/assets/images/" mapping="/images/**"/>
+    <mvc:resources location="/assets/css/" mapping="/css/**"/>
+    <mvc:resources location="/assets/js/" mapping="/js/**"/>
  </beans>

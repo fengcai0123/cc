@@ -1,11 +1,11 @@
-package com.cc.core.entity.sale;
+package com.cc.core.entity.order;
 
 import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
 @Table(name = "ecs_cart")
-public class Cart implements Serializable {
+public class ShopCart implements Serializable {
 
 	private static final long serialVersionUID = 222929843264239190L;
 
