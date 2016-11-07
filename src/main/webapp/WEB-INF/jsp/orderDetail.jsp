@@ -61,20 +61,6 @@
             },
         });
     }
-
-    function orderDetail() {
-        $.ajax({
-            type: "post",
-            url: "/user/orderDetail",
-            dataType: 'json',
-            async: false,
-            success: function (data) {
-                alert(data)
-                $("#EmrGallery").append('<c:forEach items="${orderGoodsList}" var="orderItem"><li>${orderItem.goodsName}</li></c:forEach>'
-                $('#orderGoodsList ').listview('refresh');
-            },
-        });
-    }
 </script>
 <body>
 
@@ -205,7 +191,7 @@
                                  <li>${goodItem.goodsName}</li>
                              </c:forEach>--%>
                         <li>
-                            <a href="#">
+                            <a href="/">
                                 <img src="http://img2.imgtn.bdimg.com/it/u=2830336329,2856413829&fm=21&gp=0.jpg">
                                 <h2>${orderItem.goodsName}</h2>
                                 <h2>${orderItem.goodsPrice}</h2>

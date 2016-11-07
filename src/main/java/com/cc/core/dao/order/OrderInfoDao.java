@@ -1,5 +1,7 @@
 package com.cc.core.dao.order;
 
+import com.cc.core.entity.order.OrderInfo;
+
 import java.util.List;
 
 /**
@@ -7,4 +9,5 @@ import java.util.List;
  */
 public interface OrderInfoDao {
     List<OrderInfoDao> selectByOrderId(long orderId);
+     OrderInfo selectById(long orderId);
 }

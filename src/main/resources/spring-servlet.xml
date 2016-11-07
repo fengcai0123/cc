@@ -38,8 +38,10 @@
         </mvc:interceptor>
     </mvc:interceptors>
 
+
+
     <!--静态资源文件配置-->
-    <mvc:resources location="/assets/images/" mapping="/images/**"/>
-    <mvc:resources location="/assets/css/" mapping="/css/**"/>
-    <mvc:resources location="/assets/js/" mapping="/js/**"/>
+    <mvc:resources location="/assets/images/" mapping="/assets/images/**"/>
+    <mvc:resources location="/assets/css/" mapping="/assets/css/**"/>
+    <mvc:resources location="/assets/js/" mapping="/assets/js/**"/>
  </beans>

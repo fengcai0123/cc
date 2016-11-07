@@ -32,7 +32,10 @@ public class ProfileController {
         model.addAttribute("message","hello world");
         return "index";
     }*/
-
+ @RequestMapping("/index")
+ public String mainIndex( Model model){
+     return "index";
+ }
     @RequestMapping("/user")
     public String allOrderGoodList(Model model){
         long userId=92;

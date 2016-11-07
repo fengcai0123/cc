@@ -3,123 +3,125 @@
 <script
     type="text/javascript">var ctx = '${ctx}', domain_image = '${domain_image}', domain_static = '${domain_static}';</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<%--<link rel="stylesheet" href="${domain_static}/WEB-INF/assets/css/jquery.mobile-1.4.5.min.css">
-<script src="${domain_static}/WEB-INF/assets/js/jquery-1.4.2.min.js"></script>
-<script src="${domain_static}/WEB-INF/assets/js/jquery.mobile-1.4.5.min.js"></script>--%>
-<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
-<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
-<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+<link rel="stylesheet" href="../../assets/css/base.css">
+<script src="../../assets/js/jquery-1.4.2.min.js"></script>
 
 <html>
 <head>
     <title>Title</title>
     <style>
-        *{text-decoration: none;margin: 0;padding: 0;list-style: none;}
-        #hear{width: 100%;height: 44px;line-height: 45px;border-bottom: 1px solid #cccccc;}
-        #hear a{font-weight: normal;color: black;}
-        #hear li{text-align: center;float: left;height: 45px;}
-        #hear li:nth-of-type(1){width: 33%;float: left;}
-        #hear li:nth-of-type(2){width: 33%;float: left;}
-        #hear li:nth-of-type(3){width: 34%;float: right;}
-        #contentop li{ width: 90%; display: none;text-align: center;margin: 0 auto;margin-top: 12px;}
-        #contentop .action{ display: block;}
-        #contentop .usl{width: 100%;height: 110px;background:wheat;border: 1px solid #cccccc;margin-bottom: 10px;text-shadow: none;}
-        #contentop .alo{width: 100%;height: 110px;background: white;border: 1px solid #cccccc;margin-bottom: 10px;text-shadow: none;}
-        #contentop span{font-size: 1.3em;color: #47B0D7;}
-        #contentop .sty1{margin-top: 18px;}
-        #contentop .sty2{margin-top: 13px;}
-        #contentop .sty3{margin-top: 13px;}
-        #contentop .sty4{text-align: right;font-size: 0.8em;margin-top: -20px;}
-        #contentop .Buy{font-size: 0.8em;margin-top: 2px;}
-        #contentop .Buy div:nth-of-type(1){text-align: left;padding-left: 15px;}
-        #contentop .Buy div:nth-of-type(2){float: right;}
-        #contentop .cllio {background:url(img/20010.png)repeat-x;width: 93%;height:8px;margin: 0 auto;margin-top: 5px;}
+
     </style>
     <script>
-       /* $(function () {
-            $("#hear ul").click(function () {
-                $(this).css({
-                    borderBottom:"2px solid red",
-                    height:"43px",
-                }).siblings().css({
-                    borderBottom:"none",
-                    height:"45px"
-                });
+        function goBuy() {
+            $.ajax({
+                type: "get",
+                url: 'http://localhost:8182/order/confirm',
+                async: false,
+                success(data)
+                {
+                    location.href = "http://localhost:8182/order/confirm";
+                }
             });
-
-            $("#hear ul").click(function () {
-                $(this).addClass("action").sibling().removeClass("action");
-                var index=$(this).index();
-                $("#contentop li").eq(index).css("display","block").sibling().css("display","none");
-            });
-        })*/
+        }
     </script>
 </head>
-<script>
-    function cart() {
-        $.mobile.changePage("/goods/cart", {
-            type: "post",
-            changeHash: false
-        });
-    }
-</script>
 <body>
+<div>
+    <div></div>
+    <div id="index_new_top" class="index_new_top" style="margin-top: 0px;">
+        <a href="javascript:;" rel="nofollow" onclick="getBack()" class="back"></a>
+        <a href="javascript:void(0)" class="tab on"><font>商品</font></a>
+    </div>
+    <div id="int_content" class="ind_content" style="margin-bottom:0.48rem;">
 
-<div data-role="page" id="goods">
-    <div data-role="header">
-        <div data-role="navbar" data-iconpos="top" id="hear">
-            <ul>
-                <li><a href="#goods" id="shop" class="ui-btn-active">商品</a> </li>
-                <li><a href="#" id="detail">详情</a> </li>
+        <div id="benlai_banner" class="new_goods_pic" style="margin-top: 0.44rem">
+            <div data-module="content" class="wap_pic"
+                 style="transition: all 0.4s ease; transform: translate3d(-100%, 0px, 0px);"><a
+                style="transform: translate3d(0%, 0px, 0px);"><img
+                src="https://image5.benlailife.com/ProductImages/000/000/041/216/app/33815c40-0533-405c-8edf-4bebd5813eb8.jpg"></a>
+                <a style="transform: translate3d(100%, 0px, 0px);"><img
+                    src="https://image1.benlailife.com/ProductImages/000/000/041/216/app/2ddea77c-0ed3-49f2-8e1a-200dcc5a51f3.jpg"></a>
+                <a style="transform: translate3d(200%, 0px, 0px);"><img
+                    src="https://image1.benlailife.com/ProductImages/000/000/041/216/app/07a7302d-1888-4acf-b78b-27cd4ec769bb.jpg"></a>
+                <a style="transform: translate3d(300%, 0px, 0px);"><img
+                    src="https://image1.benlailife.com/ProductImages/000/000/041/216/app/4b502f20-4449-46be-ab5b-cfcd72d00145.jpg"></a>
+                <a style="transform: translate3d(400%, 0px, 0px);"><img
+                    src="https://image5.benlailife.com/ProductImages/000/000/041/216/app/33815c40-0533-405c-8edf-4bebd5813eb8.jpg"></a>
+                <a style="transform: translate3d(500%, 0px, 0px);"><img
+                    src="https://image1.benlailife.com/ProductImages/000/000/041/216/app/2ddea77c-0ed3-49f2-8e1a-200dcc5a51f3.jpg"></a>
+            </div>
+            <ul data-module="nav">
+                <a class=""></a>
+                <a class="on"></a>
+                <a class=""></a>
+                <a class=""></a>
             </ul>
         </div>
-    </div>
-    <div data-role="content" class="ui-content" id="content_shop" style="display: block;" >
-        <div >
-        <div   onclick="javaScript:goodsDetail()">
-           <img src="${domain_static}/assets/images/products/01/main/01_0.png">
-        </div>
-        <div>
-            <span>${goods.name}</span>
-        </div>
-        <div>
-            <span>${goods.weight}  kg</span>
-        </div>
-        <div>
-            <span>￥${goods.shopPrice}</span>
-        </div>
-        <div>
+
+        <div class="new_goods_box">
+
+            <dl class="info">
+                <div class="name">台湾葡萄柚 约1kg</div>
+                <div class="word">
+                    果肉柔嫩，多汁爽口，口感舒适的舌尖诱惑
+                </div>
+                <div class="price">
+
+                    <p class="now">¥<span>39</span>.90</p>
+
+                    <p class="old">¥64</p>
+
+                    <p class="sale">直降24.10元</p>
+
+                </div>
+
+            </dl>
+            <dl class="member">
+                <dt><font>会员</font>专享价</dt>
+                <dd>
+                    黑卡/钻石38.3元;
+                    白金/金卡39.5元;
+                    银卡/绿卡/注册39.9元;
+                </dd>
+
+
+            </dl>
+            <dl class="callout" onclick="productTagShow()">
+                <a href="javascript:void(0)">
+                    <em>全面质检</em>
+                    <em>资深买手</em>
+                </a>
+            </dl>
+
 
         </div>
-        </div>
-        <div>
-            <c:forEach begin="0" end="${goods.detailNumber}" varStatus="item">
-                item=${item.index}
-                detailNumber=${goodItem.detailNumber}
-                <div><img src="${domain_static}/assets/images/products/01/main/01_${item.index}.png"></div>
-            </c:forEach>
+
+        <div class="new_goods_norm">
+            <dl>
+                <dd>
+                    <p><em>现在有货</em></p>
+                </dd>
+                <dt><span>包邮</span>泉州市满168.00元包邮</dt>
+            </dl>
         </div>
     </div>
-
-    <div id="content_detail"  >
-        <div><a href="#" data-role="button" class="ui-btn">商品详情</a> </div>
-        <div data-role="main" class="ui-content">
-            <c:forEach begin="0" end="${goods.detailNumber}" varStatus="item">
-                <div><img src="${domain_static}/assets/images/products/01/main/01_${item.index}.png"></div>
-            </c:forEach>
-        </div>
+    <div class="newlist_tab">
+        <a href="http://m.benlai.com/qz/productDetailNew/41216" class="on"><font class="noline">图文详情</font></a>
     </div>
+    <div class="detl_pic">
+        <img
+            src="https://image5.benlailife.com//ProductNewDetailImage/0102032200C/29c8f87b-58eb-453b-82f3-f781880e7e1b.jpg">
+        <img
+            src="https://image5.benlailife.com//ProductNewDetailImage/0102032200C/7a87c9a5-23d4-4d24-be3d-96d47291b5c4.jpg">
+    </div>
+    <div class="new_goods_buy">
 
-    <div data-role="footer" data-position="fixed" >
-        <div class="ui-grid-b">
-            <div class="ui-block-a"><a href="#" data-role="button">客服</a></div>
-            <div class="ui-block-b"><a href="#" data-role="button">购物车</a></div>
-            <div class="ui-block-c"><a href="#" data-role="button">加入购物车</a></div>
-        </div>
+        <a href="javascript:void (0)" onclick="addProductToCartQty(41216,1,0,1)" class="btn">加入购物车</a>
+
+        <a href="javascript:void (0)" onclick="goBuy()" class="buy_btn">立即购买</a>
     </div>
 </div>
-
-
 
 </body>
 </html>
