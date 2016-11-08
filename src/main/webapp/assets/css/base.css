@@ -1778,7 +1778,7 @@ a.none_bg {
     z-index: 99
 }
 
-.cart_news:after {
+/*.cart_news:after {
     content: "";
     display: block;
     position: absolute;
@@ -1790,7 +1790,7 @@ a.none_bg {
     background: #ddd;
     -webkit-transform: scale(0.5);
     transform: scale(0.5)
-}
+}*/
 
 .cart_news ul {
     float: left;
@@ -1802,7 +1802,7 @@ a.none_bg {
     position: relative
 }
 
-.cart_news ul li:after {
+/*.cart_news ul li:after {
     content: "";
     display: block;
     position: absolute;
@@ -1814,7 +1814,7 @@ a.none_bg {
     background: #ddd;
     -webkit-transform: scale(0.5);
     transform: scale(0.5)
-}
+}*/
 
 .cart_news ul li a {
     display: block;
@@ -4272,7 +4272,7 @@ a.none_bg {
     position: relative
 }
 
-.cart_news2 ul li:after {
+/*.cart_news2 ul li:after {
     content: "";
     display: block;
     position: absolute;
@@ -4284,7 +4284,7 @@ a.none_bg {
     background: #ddd;
     -webkit-transform: scale(0.5);
     transform: scale(0.5)
-}
+}*/
 
 .cart_news2 ul li a {
     display: block;
@@ -10846,7 +10846,7 @@ a.none_bg {
     position: relative
 }
 
-.cartnew_promot dl:after {
+/*.cartnew_promot dl:after {
     content: "";
     display: block;
     position: absolute;
@@ -10857,7 +10857,7 @@ a.none_bg {
     background: #ddd;
     -webkit-transform: scale(0.5);
     transform: scale(0.5)
-}
+}*/
 
 .cartnew_promot dl dt {
     float: left;
@@ -10950,7 +10950,7 @@ a.none_bg {
     width: 100%;
     position: relative
 }
-
+/*
 .cartnew_list .only_sku:after {
     content: "";
     display: block;
@@ -10962,7 +10962,7 @@ a.none_bg {
     background: #ddd;
     -webkit-transform: scale(0.5);
     transform: scale(0.5)
-}
+}*/
 
 .cartnew_list .only_sku .sku {
     float: left;
@@ -11054,7 +11054,7 @@ a.none_bg {
     padding: 0rem .02rem 0rem .14rem
 }
 
-.cartnew_list .only_sku .sku dl dt .ico:after {
+/*.cartnew_list .only_sku .sku dl dt .ico:after {
     content: "";
     display: block;
     position: absolute;
@@ -11064,7 +11064,7 @@ a.none_bg {
     background-size: .11rem;
     height: .12rem;
     width: .13rem
-}
+}*/
 
 .cartnew_list .only_sku .sku dl dt .price {
     font: 400 .13rem/0.2rem "黑体";
@@ -11178,7 +11178,7 @@ a.none_bg {
     z-index: 0
 }
 
-.cartnew_combination dl:after {
+/*.cartnew_combination dl:after {
     content: "";
     display: block;
     position: absolute;
@@ -11190,7 +11190,7 @@ a.none_bg {
     background: #ddd;
     -webkit-transform: scale(0.5);
     transform: scale(0.5)
-}
+}*/
 
 .cartnew_combination dl dt {
     float: left;
@@ -11373,7 +11373,7 @@ a.none_bg {
     box-sizing: border-box
 }
 
-.cartnew_foot:after {
+/*.cartnew_foot:after {
     content: "";
     display: block;
     position: absolute;
@@ -11384,7 +11384,7 @@ a.none_bg {
     background: #ddd;
     -webkit-transform: scale(0.5);
     transform: scale(0.5)
-}
+}*/
 
 .cartnew_foot a.choose {
     float: left;
@@ -15156,24 +15156,24 @@ a.none_bg {
     background-color: #abd13e
 }
 
-.new_goods_box {
+/*.detail_new_goods_box {
     float: left;
     width: 100%;
     background-color: #fff;
-    box-shadow: 0 -.04rem .04rem 0 rgba(0, 0, 0, .08);
+   !* box-shadow: 0 -.04rem .04rem 0 rgba(0, 0, 0, .08);*!
     position: relative;
     z-index: 10;
     margin-bottom: .1rem
 }
 
-.new_goods_box .info {
+.detail_new_goods_box .detail_info {
     float: left;
     width: 100%;
     padding: .1rem .1rem .15rem;
     box-sizing: border-box
 }
 
-.new_goods_box .info .name {
+.new_goods_box .detail_info .detail_name {
     font-size: .16rem;
     color: #333;
     line-height: 1.5
@@ -15263,7 +15263,7 @@ a.none_bg {
     z-index: 0
 }
 
-.new_goods_box .member:after {
+!*.new_goods_box .member:after {
     content: "";
     display: block;
     position: absolute;
@@ -15274,7 +15274,7 @@ a.none_bg {
     background: #ddd;
     -webkit-transform: scale(0.5);
     transform: scale(0.5)
-}
+}*!
 
 .new_goods_box .member dt {
     float: left;
@@ -15312,7 +15312,7 @@ a.none_bg {
     z-index: 0
 }
 
-.new_goods_box .callout:after {
+!*.new_goods_box .callout:after {
     content: "";
     display: block;
     position: absolute;
@@ -15323,7 +15323,7 @@ a.none_bg {
     background: #ddd;
     -webkit-transform: scale(0.5);
     transform: scale(0.5)
-}
+}*!
 
 .new_goods_box .callout:before {
     content: "";
@@ -15355,7 +15355,7 @@ a.none_bg {
     box-sizing: border-box;
     background: url(//image.benlailife.com/static/images/goods/goods_new_5c4d302b.png) 0 -.27rem no-repeat;
     background-size: .17rem
-}
+}*/
 
 .new_goods_norm {
     float: left;
@@ -15396,7 +15396,7 @@ a.none_bg {
     padding: .1rem 0rem
 }
 
-.new_goods_norm dl dd p:after {
+/*.new_goods_norm dl dd p:after {
     content: "";
     display: block;
     position: absolute;
@@ -15407,7 +15407,7 @@ a.none_bg {
     background: #ddd;
     -webkit-transform: scale(0.5);
     transform: scale(0.5)
-}
+}*/
 
 .new_goods_norm dl dd p em {
     font-size: .15rem;
@@ -15438,7 +15438,7 @@ a.none_bg {
     padding: 0rem .02rem;
     margin-right: .1rem
 }
-
+/*
 .new_goods_norm dl dt:after {
     content: "";
     display: block;
@@ -15450,7 +15450,7 @@ a.none_bg {
     background: #ddd;
     -webkit-transform: scale(0.5);
     transform: scale(0.5)
-}
+}*/
 
 .new_goods_sale {
     float: left;
@@ -15469,7 +15469,7 @@ a.none_bg {
     height: .44rem
 }
 
-.new_goods_sale a:after {
+/*.new_goods_sale a:after {
     content: "";
     display: block;
     position: absolute;
@@ -15480,7 +15480,7 @@ a.none_bg {
     background: #ddd;
     -webkit-transform: scale(0.5);
     transform: scale(0.5)
-}
+}*/
 
 .new_goods_sale a em {
     float: right;
@@ -15555,7 +15555,7 @@ a.none_bg {
     height: .24rem
 }
 
-.new_goods_prompt dl dt a:after {
+/*.new_goods_prompt dl dt a:after {
     content: "";
     display: block;
     position: absolute;
@@ -15566,7 +15566,7 @@ a.none_bg {
     background: #ddd;
     -webkit-transform: scale(0.5);
     transform: scale(0.5)
-}
+}*/
 
 .new_goods_prompt dl dt a.back:before {
     background: url(//image.benlailife.com/static/images/cart/ordernew_shrink_7fd2a1f3.png) right -.2rem no-repeat;
@@ -15611,7 +15611,7 @@ a.none_bg {
     z-index: 0;
     min-height: .7rem
 }
-
+/*
 .new_goods_normpop dl dt:after {
     content: "";
     display: block;
@@ -15623,7 +15623,7 @@ a.none_bg {
     background: #ddd;
     -webkit-transform: scale(0.5);
     transform: scale(0.5)
-}
+}*/
 
 .new_goods_normpop dl dt .pic {
     position: absolute;
@@ -15691,7 +15691,7 @@ a.none_bg {
     z-index: 0
 }
 
-.new_goods_normpop dl dd ul:after {
+/*.new_goods_normpop dl dd ul:after {
     content: "";
     display: block;
     position: absolute;
@@ -15702,7 +15702,7 @@ a.none_bg {
     background: #ddd;
     -webkit-transform: scale(0.5);
     transform: scale(0.5)
-}
+}*/
 
 .new_goods_normpop dl dd ul p {
     font-size: .15rem;
@@ -15792,7 +15792,7 @@ a.none_bg {
     color: #333
 }
 
-.new_goods_explainpop ol:after, .new_goods_explainpop ul li:after {
+/*.new_goods_explainpop ol:after, .new_goods_explainpop ul li:after {
     content: "";
     display: block;
     position: absolute;
@@ -15803,7 +15803,7 @@ a.none_bg {
     background: #ddd;
     -webkit-transform: scale(0.5);
     transform: scale(0.5)
-}
+}*/
 
 .new_goods_explainpop ul {
     float: left;
@@ -15880,7 +15880,7 @@ a.none_bg {
     z-index: 0
 }
 
-.newlist_tab:after {
+/*.newlist_tab:after {
     content: "";
     display: block;
     position: absolute;
@@ -15891,7 +15891,7 @@ a.none_bg {
     background: #ddd;
     -webkit-transform: scale(0.5);
     transform: scale(0.5)
-}
+}*/
 
 .newlist_tab a {
     display: block;
@@ -15912,7 +15912,7 @@ a.none_bg {
     z-index: 0
 }
 
-.newlist_tab a font:after {
+/*.newlist_tab a font:after {
     content: "";
     display: block;
     position: absolute;
@@ -15923,7 +15923,7 @@ a.none_bg {
     background: #ddd;
     -webkit-transform: scale(0.5);
     transform: scale(0.5)
-}
+}*/
 
 .newlist_tab a.on font {
     color: #abd13e
@@ -15951,7 +15951,7 @@ a.none_bg {
     box-sizing: border-box
 }
 
-.new_goods_constitute dl dt a:after {
+/*.new_goods_constitute dl dt a:after {
     content: "";
     display: block;
     position: absolute;
@@ -15962,7 +15962,7 @@ a.none_bg {
     background: #ddd;
     -webkit-transform: scale(0.5);
     transform: scale(0.5)
-}
+}*/
 
 .new_goods_constitute dl dt a:before {
     content: "";
@@ -16029,7 +16029,7 @@ a.none_bg {
     z-index: 0
 }
 
-.new_goods_constitute dl dd ul li a:after {
+/*.new_goods_constitute dl dd ul li a:after {
     content: "";
     display: block;
     position: absolute;
@@ -16040,7 +16040,7 @@ a.none_bg {
     background: #ddd;
     -webkit-transform: scale(0.5);
     transform: scale(0.5)
-}
+}*/
 
 .new_goods_constitute dl dd ul li .name {
     margin-left: .72rem;
@@ -16184,7 +16184,7 @@ a.none_bg {
     padding-left: .1rem;
     box-sizing: border-box
 }
-
+/*
 .new_goods_gift dl:after {
     content: "";
     display: block;
@@ -16196,7 +16196,7 @@ a.none_bg {
     background: #ddd;
     -webkit-transform: scale(0.5);
     transform: scale(0.5)
-}
+}*/
 
 .new_goods_gift dl dt {
     font-size: .13rem;
@@ -16220,7 +16220,7 @@ a.none_bg {
     padding: .15rem .1rem .15rem 0rem;
     box-sizing: border-box
 }
-
+/*
 .new_goods_gift dl dd ul li:after {
     content: "";
     display: block;
@@ -16232,7 +16232,7 @@ a.none_bg {
     background: #ddd;
     -webkit-transform: scale(0.5);
     transform: scale(0.5)
-}
+}*/
 
 .new_goods_gift dl dd ul li em {
     position: absolute;
@@ -16320,7 +16320,7 @@ a.none_bg {
     z-index: 0
 }
 
-.new_goods_giftlist dl:after {
+/*.new_goods_giftlist dl:after {
     content: "";
     display: block;
     position: absolute;
@@ -16331,7 +16331,7 @@ a.none_bg {
     background: #ddd;
     -webkit-transform: scale(0.5);
     transform: scale(0.5)
-}
+}*/
 
 .new_goods_giftlist dl dd {
     float: left;
@@ -16374,7 +16374,7 @@ a.none_bg {
     padding: .1rem 0rem
 }
 
-.new_goods_giftlist ul li:after {
+/*.new_goods_giftlist ul li:after {
     content: "";
     display: block;
     position: absolute;
@@ -16385,7 +16385,7 @@ a.none_bg {
     background: #ddd;
     -webkit-transform: scale(0.5);
     transform: scale(0.5)
-}
+}*/
 
 .new_goods_giftlist ul li .pic img {
     float: left;
@@ -16478,7 +16478,7 @@ a.none_bg {
     z-index: 0
 }
 
-.new_goods_talktab:after {
+/*.new_goods_talktab:after {
     content: "";
     display: block;
     position: absolute;
@@ -16489,7 +16489,7 @@ a.none_bg {
     background: #ddd;
     -webkit-transform: scale(0.5);
     transform: scale(0.5)
-}
+}*/
 
 .new_goods_talktab a {
     display: block;
@@ -16667,7 +16667,7 @@ a.none_bg {
     z-index: 0
 }
 
-.newlist_submenu a:after {
+/*.newlist_submenu a:after {
     content: "";
     display: block;
     position: absolute;
@@ -16678,7 +16678,7 @@ a.none_bg {
     background: #ddd;
     -webkit-transform: scale(0.5);
     transform: scale(0.5)
-}
+}*/
 
 .newlist_submenu a font {
     font-size: .14rem;
@@ -16762,7 +16762,7 @@ a.none_bg {
     z-index: 0
 }
 
-.app_download:after {
+/*.app_download:after {
     content: "";
     display: block;
     position: absolute;
@@ -16773,7 +16773,7 @@ a.none_bg {
     height: .34rem;
     background: url(//image.benlailife.com/static/images/download_ico_abb462af.png) center .02rem no-repeat;
     background-size: .3rem
-}
+}*/
 
 .app_download a.close {
     float: left;
@@ -16814,7 +16814,7 @@ a.none_bg {
     background-color: #fff
 }
 
-.newlist_s_tab:after {
+/*.newlist_s_tab:after {
     content: "";
     display: block;
     position: absolute;
@@ -16825,7 +16825,7 @@ a.none_bg {
     background: #ddd;
     -webkit-transform: scale(0.5);
     transform: scale(0.5)
-}
+}*/
 
 .newlist_s_tab a {
     display: block;
@@ -16862,7 +16862,7 @@ a.none_bg {
     height: .2rem
 }
 
-.newlist_s_tab a.down:after {
+/*.newlist_s_tab a.down:after {
     content: "";
     display: block;
     position: absolute;
@@ -16874,7 +16874,7 @@ a.none_bg {
     width: .1rem;
     height: .2rem;
     transform: rotateX(180deg)
-}
+}*/
 
 .newlist_s_fixedbox {
     position: fixed;
@@ -16900,7 +16900,7 @@ a.none_bg {
     z-index: 0
 }
 
-.newlist_s_list dl:after {
+/*.newlist_s_list dl:after {
     content: "";
     display: block;
     position: absolute;
@@ -16911,7 +16911,7 @@ a.none_bg {
     background: #ddd;
     -webkit-transform: scale(0.5);
     transform: scale(0.5)
-}
+}*/
 
 .newlist_s_list dl a {
     display: inline-block;
@@ -17062,7 +17062,7 @@ a.none_bg {
     margin: .08rem .05rem 0rem 0rem;
     overflow: hidden
 }
-
+/*
 .newlist_s_list dl dd .ico02:after {
     content: "";
     display: block;
@@ -17073,7 +17073,7 @@ a.none_bg {
     background-size: .14rem;
     height: .14rem;
     width: .13rem
-}
+}*/
 
 .newlist_s_filter .more {
     position: absolute;
@@ -17092,7 +17092,7 @@ a.none_bg {
     z-index: 0
 }
 
-.newlist_s_filter .more a:after {
+/*.newlist_s_filter .more a:after {
     content: "";
     display: block;
     position: absolute;
@@ -17103,7 +17103,7 @@ a.none_bg {
     background: #ddd;
     -webkit-transform: scale(0.5);
     transform: scale(0.5)
-}
+}*/
 
 .newlist_s_list dl a.no {
     background: url(//image.benlailife.com/static/images/goods_newmenu_97dede45.png) .08rem .08rem no-repeat;
@@ -17118,7 +17118,7 @@ a.none_bg {
     z-index: 0
 }
 
-.newlist_s_filter:after {
+/*.newlist_s_filter:after {
     content: "";
     display: block;
     position: absolute;
@@ -17129,7 +17129,7 @@ a.none_bg {
     background: #ddd;
     -webkit-transform: scale(0.5);
     transform: scale(0.5)
-}
+}*/
 
 .newlist_s_filter dl {
     float: left;
@@ -17157,7 +17157,7 @@ a.none_bg {
     z-index: 0
 }
 
-.newlist_s_filter dl dt a:after {
+/*.newlist_s_filter dl dt a:after {
     content: "";
     display: block;
     position: absolute;
@@ -17168,7 +17168,7 @@ a.none_bg {
     background: #ddd;
     -webkit-transform: scale(0.5);
     transform: scale(0.5)
-}
+}*/
 
 .newlist_s_filter dl dd {
     float: left;
@@ -17224,7 +17224,7 @@ a.none_bg {
     height: .5rem
 }
 
-.newlist_s_filter_on:after {
+/*.newlist_s_filter_on:after {
     content: "";
     display: block;
     position: absolute;
@@ -17235,7 +17235,7 @@ a.none_bg {
     background: #ddd;
     -webkit-transform: scale(0.5);
     transform: scale(0.5)
-}
+}*/
 
 .newlist_s_filter_on dl dt p {
     float: left;
@@ -17256,7 +17256,7 @@ a.none_bg {
     transform: rotateX(180deg)
 }
 
-.newlist_s_filter_on dl dt a:after {
+/*.newlist_s_filter_on dl dt a:after {
     content: "";
     display: block;
     position: absolute;
@@ -17267,7 +17267,7 @@ a.none_bg {
     background: #ddd;
     -webkit-transform: scale(0.5);
     transform: scale(0.5)
-}
+}*/
 
 .newlist_s_filter_on dl dd {
     position: absolute;
@@ -17431,7 +17431,7 @@ a.none_bg {
     box-sizing: border-box
 }
 
-.money_head dl dd:after {
+/*.money_head dl dd:after {
     content: "";
     display: block;
     position: absolute;
@@ -17442,7 +17442,7 @@ a.none_bg {
     background: #ff9600;
     -webkit-transform: scale(0.5);
     transform: scale(0.5)
-}
+}*/
 
 .money_head dl dd a {
     display: block;
@@ -17456,7 +17456,7 @@ a.none_bg {
     z-index: 0
 }
 
-.money_head dl dd a:after {
+/*.money_head dl dd a:after {
     content: "";
     display: block;
     position: absolute;
@@ -17467,7 +17467,7 @@ a.none_bg {
     background: #ff9600;
     -webkit-transform: scale(0.5);
     transform: scale(0.5)
-}
+}*/
 
 .money_head dl dd a p {
     font-size: .2rem;
@@ -17516,7 +17516,7 @@ a.none_bg {
     margin-right: .12rem
 }
 
-.money_bulletin .ico:after {
+/*.money_bulletin .ico:after {
     content: "";
     display: block;
     position: absolute;
@@ -17527,7 +17527,7 @@ a.none_bg {
     background: #ddd;
     -webkit-transform: scale(0.5);
     transform: scale(0.5)
-}
+}*/
 
 .money_bulletin .pic {
     float: left;
@@ -17584,7 +17584,7 @@ a.none_bg {
     margin-top: .18rem
 }
 
-.money_ranking dl dt s:after {
+/*.money_ranking dl dt s:after {
     content: "";
     display: block;
     position: absolute;
@@ -17595,7 +17595,7 @@ a.none_bg {
     background: #999;
     -webkit-transform: scale(0.5);
     transform: scale(0.5)
-}
+}*/
 
 .money_ranking dl dt .box {
     display: inline-block
@@ -17620,7 +17620,7 @@ a.none_bg {
     z-index: 0
 }
 
-.money_ranking dl dt .box em:after {
+/*.money_ranking dl dt .box em:after {
     content: "";
     display: block;
     position: absolute;
@@ -17632,7 +17632,7 @@ a.none_bg {
     -webkit-transform: scale(0.5);
     transform: scale(0.5);
     transform: rotate(30deg)
-}
+}*/
 
 .money_ranking dl dd {
     float: left;
@@ -17656,7 +17656,7 @@ a.none_bg {
     margin-top: .23rem
 }
 
-.money_ranking dl dd ul li .pic:after {
+/*.money_ranking dl dd ul li .pic:after {
     content: "";
     display: block;
     position: absolute;
@@ -17666,7 +17666,7 @@ a.none_bg {
     height: .75rem;
     background: url(//image.benlailife.com/static/images/money/money_ranking_896e0312.png) center -1.13rem no-repeat;
     background-size: .88rem
-}
+}*/
 
 .money_ranking dl dd ul li .pic img {
     width: .36rem;
@@ -17702,22 +17702,24 @@ a.none_bg {
     vertical-align: top;
     margin-top: .02rem
 }
+/*
 
 .money_ranking dl dd ul li:nth-child(3) .pic:after {
     background: url(//image.benlailife.com/static/images/money/money_ranking_896e0312.png) center -2.095rem no-repeat;
     background-size: .88rem
 }
+*/
 
 .money_ranking dl dd ul li:nth-child(2) .pic {
     height: .98rem;
     margin-top: 0
 }
 
-.money_ranking dl dd ul li:nth-child(2) .pic:after {
+/*.money_ranking dl dd ul li:nth-child(2) .pic:after {
     background: url(//image.benlailife.com/static/images/money/money_ranking_896e0312.png) center .075rem no-repeat;
     background-size: .88rem;
     height: .98rem
-}
+}*/
 
 .money_ranking dl dd ul li:nth-child(2) .pic img {
     width: .44rem;
@@ -17758,7 +17760,7 @@ a.none_bg {
     margin-top: .18rem
 }
 
-.money_hot dl dt s:after {
+/*.money_hot dl dt s:after {
     content: "";
     display: block;
     position: absolute;
@@ -17769,7 +17771,7 @@ a.none_bg {
     background: #999;
     -webkit-transform: scale(0.5);
     transform: scale(0.5)
-}
+}*/
 
 .money_hot dl dt .box {
     display: inline-block
@@ -17793,7 +17795,7 @@ a.none_bg {
     position: relative;
     z-index: 0
 }
-
+/*
 .money_hot dl dt .box em:after {
     content: "";
     display: block;
@@ -17806,7 +17808,7 @@ a.none_bg {
     -webkit-transform: scale(0.5);
     transform: scale(0.5);
     transform: rotate(30deg)
-}
+}*/
 
 .money_hot dl dd {
     float: left;
@@ -17823,7 +17825,7 @@ a.none_bg {
     padding: .1rem 0rem
 }
 
-.money_hot dl dd ul li:after {
+/*.money_hot dl dd ul li:after {
     content: "";
     display: block;
     position: absolute;
@@ -17834,7 +17836,7 @@ a.none_bg {
     background: #ddd;
     -webkit-transform: scale(0.5);
     transform: scale(0.5)
-}
+}*/
 
 .money_hot dl dd ul li a {
     display: block
@@ -17892,7 +17894,7 @@ a.none_bg {
     padding: .1rem 0rem
 }
 
-.money_sku ul li:after {
+/*.money_sku ul li:after {
     content: "";
     display: block;
     position: absolute;
@@ -17903,7 +17905,7 @@ a.none_bg {
     background: #ddd;
     -webkit-transform: scale(0.5);
     transform: scale(0.5)
-}
+}*/
 
 .money_sku ul li a {
     float: left;
@@ -18006,7 +18008,7 @@ a.none_bg {
     line-height: 1.6
 }
 
-.order_success_tit:after {
+/*.order_success_tit:after {
     content: "";
     display: block;
     position: absolute;
@@ -18016,17 +18018,17 @@ a.none_bg {
     height: .6rem;
     background: url(//image.benlailife.com/static/images/cart/success_ico_e12ae717.png) center .05rem no-repeat;
     background-size: .5rem
-}
+}*/
 
 .order_success_titno {
     background: url(//image.benlailife.com/static/images/cart/success_bg_694c65ea.png) center top no-repeat #ffb448;
     background-size: cover
 }
-
+/*
 .order_success_titno:after {
     background: url(//image.benlailife.com/static/images/cart/success_ico_e12ae717.png) center -.95rem no-repeat;
     background-size: .5rem
-}
+}*/
 
 .order_success_list {
     float: left;
@@ -18044,7 +18046,7 @@ a.none_bg {
     padding: .1rem 0rem
 }
 
-.order_success_list dl dt:after {
+/*.order_success_list dl dt:after {
     content: "";
     display: block;
     position: absolute;
@@ -18055,7 +18057,7 @@ a.none_bg {
     background: #ddd;
     -webkit-transform: scale(0.5);
     transform: scale(0.5)
-}
+}*/
 
 .order_success_list dl dt p {
     font-size: .14rem;

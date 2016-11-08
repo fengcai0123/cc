@@ -36,6 +36,7 @@ public class ProfileController {
  public String mainIndex( Model model){
      return "index";
  }
+
     @RequestMapping("/user")
     public String allOrderGoodList(Model model){
         long userId=92;
@@ -47,6 +48,19 @@ public class ProfileController {
             System.out.println("orderGoodControllerTest:" +category.getGoodsName()+"  id="+category.getOrderId());
         }
         return "user";
+    }
+
+    @RequestMapping("/profile")
+    public String allOrder(Model model){
+      /*  long userId=92;
+        List<OrderGoods> orderGoodsList = orderGoodsService.findAllOrderGoodsList(userId);
+        model.addAttribute("orderGoodsList",orderGoodsList);
+        model.addAttribute("orderGoodsWaitPayList",orderGoodsList);
+        for(int i=0;i<orderGoodsList.size();i++) {
+            OrderGoods category=orderGoodsList.get(i);
+            System.out.println("orderGoodControllerTest:" +category.getGoodsName()+"  id="+category.getOrderId());
+        }*/
+        return "profile";
     }
 
     @ResponseBody

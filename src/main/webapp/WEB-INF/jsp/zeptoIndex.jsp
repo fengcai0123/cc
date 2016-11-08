@@ -32,6 +32,19 @@
     }
 </script>
 <style>
+    .foot_tab{
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        position: fixed;
+        z-index: 9099;
+        background-color: #fff;
+        height: .49rem;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+    }
     .foot_tab ul {
         list-style: none;
         float: left;
@@ -58,7 +71,7 @@
     }
 
     .foot_tab a p {
-        font: 400 .6rem/1rem "黑体";
+        font: 400 0.12rem/0.1rem "黑体";
         color: #666;
     }
 
@@ -149,34 +162,26 @@
     </div>
 
 
-    <div id="orders_buy" class="ordernew_fixed">
-        <dl>
-            <dt>配送至：九亭大街-松江区</dt>
-            <dd>
-                <p>应付金额：<span>￥148.00</span></p>
-                <a href="javascript:void(0);" name="subOrder" data-totalamt="148.00" id="confirmOrder" onclick="goPay();" >提交订单</a>
-            </dd>
-        </dl>
-    </div>
-    <%--<div class="foot_tab">
+
+    <div class="foot_tab">
 
         <a href="#">
             <img src="../../assets/images/common/home.png">
             <p>首页</p>
         </a>
-        <p>
+        <a href="#">
             <img src="../../assets/images/common/category.png">
             <p>分类</p>
         </a>
-        <a>
+        <a href="#">
             <img src="../../assets/images/common/category.png">
             <p  >购物车</p>
         </a>
-        <a>
+        <a href="profile">
             <img src="../../assets/images/common/profile.png">
             <p>我的</p>
         </a>
-    </div>--%>
+    </div>
 </div>
 <%--<html>
 <head>

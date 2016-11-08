@@ -103,6 +103,10 @@ public class GoodController {
         model.addAttribute("goods",goods);
         return "zeptoIndex";
     }
+    @RequestMapping("/profile")
+    public String indexProfile( Model model){
+        return "redirect:/user/profile";
+    }
 
     @RequestMapping("/zeptoDetail")
     public String zeptoDetail( Model model){
