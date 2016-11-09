@@ -32,48 +32,7 @@
     }
 </script>
 <style>
-    .foot_tab{
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        position: fixed;
-        z-index: 9099;
-        background-color: #fff;
-        height: .49rem;
-        display: -webkit-box;
-        display: -webkit-flex;
-        display: -ms-flexbox;
-        display: flex;
-    }
-    .foot_tab ul {
-        list-style: none;
-        float: left;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        position: fixed;
-        z-index: 99;
-        height: 3em;
-        background-color: #fff;
-    }
 
-    .foot_tab a {
-        float: left;
-        width: 25%;
-        text-align: center;
-        position: relative;
-        z-index: 0;
-    }
-
-    .foot_tab a img {
-        margin-top: 0.3em;
-        width: 1.8em;
-    }
-
-    .foot_tab a p {
-        font: 400 0.12rem/0.1rem "黑体";
-        color: #666;
-    }
 
     .active {
         background-color: #5cb85c;
@@ -165,7 +124,7 @@
 
     <div class="foot_tab">
 
-        <a href="#">
+        <a href="#" class="on">
             <img src="../../assets/images/common/home.png">
             <p>首页</p>
         </a>
@@ -173,11 +132,11 @@
             <img src="../../assets/images/common/category.png">
             <p>分类</p>
         </a>
-        <a href="#">
+        <a href="cart">
             <img src="../../assets/images/common/category.png">
             <p  >购物车</p>
         </a>
-        <a href="profile">
+        <a href="profile" >
             <img src="../../assets/images/common/profile.png">
             <p>我的</p>
         </a>

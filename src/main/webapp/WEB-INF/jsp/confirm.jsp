@@ -11,7 +11,41 @@
 <head>
     <title>Title</title>
     <style>
-
+        .confirm_goods{
+            width: 100%;
+        }
+        .confirm_goods ul{
+            width: 100%;
+        }
+        .confirm_goods .confirm_goods_img{
+            float: left;
+            width: 20%;
+        }
+        .confirm_goods .confirm_goods_img{
+            float: left;
+            height: 0.85rem;
+            line-height: 0.85rem;
+        }
+        .confirm_goods .confirm_goods_name{
+            float: left;
+            height: 0.85rem;
+            line-height: 0.85rem;
+            width: 60%;
+        }
+        .confirm_goods .confirm_goods_name p{
+            height: 0.55rem;
+            line-height: 0.55rem;
+        }
+        .confirm_goods .confirm_goods_name em{
+            height: 0.30rem;
+            line-height: 0.3rem;
+        }
+        .confirm_goods .confirm_goods_price{
+            float: right;
+            width: 20%;
+            height: 0.85rem;
+            line-height: 0.85rem;
+        }
     </style>
     <script>
        function goPay() {
@@ -86,81 +120,33 @@
 
 
 
-
-                    <dl class="pay">
-                        <a href="javascript:;" id="changePay">
-                            <em>支付方式</em>
-                            <p>
-
-
-                                微信支付
-
-
-
-                            </p>
-                        </a>
-                    </dl>
-
-                    <dl class="switch">
-                        <ol id="aCoupon_double" style="opacity: 1;">
-                            <li>
-                                <a id="showCoupon" href="javascript:;" data-checked="true" class="tit"><font>优惠券</font><em>无可用</em></a>
-                                <a href="javascript:;" onclick="useCouponCodeOrder()" class="btn">使用</a>
-                                <p>
-                                    <a id="clearInput" href="javascript:$('#clearInput').next('input').val('');" class="close"></a>
-                                    <input id="couponCode" placeholder="请输入优惠券密码" class="on" type="text">
-                                </p>
-                            </li>
-                        </ol>
+                    <dl class="confirm_goods">
                         <ul>
-                            <li id="aCoupon" style="display: none;">
-                                <p>优惠券</p>
-                                <em id="AvailableCount">（可用<span> 0张</span>）</em>
-                                <a class="sale" href="javascript:;" data-checked="false"></a>
+                            <li class="confirm_goods_img">
+                                <img src="../../assets/images/common/face1.png">
                             </li>
-
-                            <li>
-                                <p>礼金卡</p>
-                                <em>（可用<span>¥0.00</span>）</em>
-                                <a href="javascript:;" id="goBindGiftCard" class="word">添加</a>
-                                <a href="javascript:;" id="aGiftCard" data-checked="false" data-val="0" data-canuse="0" data-message="礼金卡不能抵扣剩余金额" class="turn off"></a>
+                            <li class="confirm_goods_name">
+                                <p>商品名称</p>
+                                <em>X 14</em>
                             </li>
-
-                            <li>
-                                <p>余额</p>
-                                <em>（可用<span>¥0.00</span>）</em>
-                                <a href="javascript:;" id="aBalance" data-checked="false" data-val="0" data-canuse="0" data-message="余额不能抵扣剩余金额" class="turn off"></a>
-                            </li>
-
-                            <li>
-                                <p>积分</p>
-                                <em>（可用<span>¥0.00</span>）</em>
-                                <a href="javascript:;" id="aScore" data-checked="false" data-val="0" data-canuse="0" data-message="积分不能抵扣剩余金额" class="turn off"></a>
+                            <li class="confirm_goods_price">
+                                <em>＋￥148.00</em>
                             </li>
                         </ul>
                     </dl>
 
+                    <dl class="pay">
+                        <a href="javascript:;" id="changePay">
+                            <em>支付方式</em>
+                            <p>  微信支付  </p>
+                        </a>
+                    </dl>
 
                     <dl class="invoice">
-                        <em>发票</em>
-                        <p>暂不支持线上开发票</p>
+                        <em>配送方式</em>
+                        <p>快递</p>
                     </dl>
-                    <dl class="invoice">
-                        <em>发票</em>
-                        <p>暂不支持线上开发票</p>
-                    </dl>
-                    <dl class="invoice">
-                        <em>发票</em>
-                        <p>暂不支持线上开发票</p>
-                    </dl>
-                    <dl class="invoice">
-                        <em>发票</em>
-                        <p>暂不支持线上开发票</p>
-                    </dl>
-                    <dl class="invoice">
-                        <em>发票</em>
-                        <p>暂不支持线上开发票</p>
-                    </dl>
+
                     <dl class="price">
                         <dd style="padding-bottom:0.1rem">
                             <ul>
@@ -170,10 +156,14 @@
                                 </li>
                             </ul>
                         </dd>
-                        <dt>
-                        <p>购物小票上打印价格</p>
-                        <a href="javascript:;" id="printsoPrice" data_isprintsoprice="1" class="turn on"></a>
-                        </dt>
+                        <dd>
+                            <ul>
+                                <li>
+                                    <p>运费</p>
+                                    <em>＋￥148.00</em>
+                                </li>
+                            </ul>
+                        </dd>
                     </dl>
                     <div class="btn3" style="display:none"><a href="javascript:;" name="subOrder">提 交 订 单</a></div>
                 </div>

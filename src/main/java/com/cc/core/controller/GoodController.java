@@ -108,6 +108,11 @@ public class GoodController {
         return "redirect:/user/profile";
     }
 
+    @RequestMapping("/cart")
+    public String indexCart( Model model){
+        return "redirect:/cart/list";
+    }
+
     @RequestMapping("/zeptoDetail")
     public String zeptoDetail( Model model){
         return "zeptoDetail";

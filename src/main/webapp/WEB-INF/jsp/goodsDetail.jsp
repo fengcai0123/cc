@@ -24,6 +24,20 @@
         }
     </script>
     <style>
+        .detail_pics_list{
+           width: 100%;
+            text-align: center;
+        }
+        .detail_pics_list a.detai_pic_a{
+            height: 0.3rem;
+            line-height: 0.3rem;
+            text-align: center;
+        }
+        .detail_pics_list a font{
+            text-align: center;
+            color: #abd13e;
+            font-size: 0.16rem;
+        }
         .pName {
             width: 100%;
             height: 3.642em;
@@ -241,14 +255,14 @@
             <dl>
                 <dt>
                     <span>促销价 :</span>
-                    <span class="p">￥16.8</span>
-                    <span class="s">￥19.8</span>
+                    <span class="p">￥${goods.shopPrice}</span>
+                    <span class="s">￥${goods.shopPrice1}</span>
                 </dt>
                 <dd class="clearfix">
-                    <div class="even">品牌：鑫荣懋</div>
-                    <div class="evening">产地：中国</div>
+                    <div class="even">品牌：焕橙</div>
+                    <div class="evening">产地：广西贺州市</div>
                     <br>
-                    <div class="evening" val="5742" id="selled_number">销量： 5742</div>
+                    <div class="evening" val="5742" id="selled_number">销量： ${goods.sellNum}</div>
                 </dd>
             </dl>
             <div class="lineBetween"></div>
@@ -293,9 +307,9 @@
             </div>
         </form>
     </div>
-    <div class="detail_newlist_tab">
-        <a href="http://m.benlai.com/qz/productDetailNew/41216" class="detail_on">
-            <font class="noline">图文详情</font></a>
+    <div class="detail_pics_list">
+        <a href="http://m.benlai.com/qz/productDetailNew/41216" class="detai_pic_a">
+            <font class=" ">图文详情</font></a>
     </div>
     <div class="detl_pic">
         <img

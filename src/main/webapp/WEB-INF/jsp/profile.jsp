@@ -32,13 +32,15 @@
         }
         .my_picc{
             background: url("../../assets/images/common/myp_bg.jpg") left bottom
-            repeat;
+            no-repeat;
             height:1.7143rem;
             color:#fff;
+            text-align: center;
         }
         .my_picc .myp-t0{
             margin:0.235rem;
             border:1px solid #4cae4c;
+            display: inline-block;
         }
         .my_picc .myp-t0 .myp-facebg{
             float: left;
@@ -56,13 +58,15 @@
         }
         .myp-t0 .myp-title{
             float: left;
-            vertical-align: middle;
+            display: inline-block;
+            height: 0.547rem;
+            line-height: 0.547rem;
         }
         .myp-t0 .myp-title span{
            display: block;
             padding-left: 0.235rem;
-            height: 0.2857rem;
-            line-height: 0.2857rem;
+            height: 0.547rem;
+            line-height: 0.547rem;
             font-size: .1857rem;
             color: #fff;
         }
@@ -180,6 +184,26 @@
     </div>
     <div class="new-btn">
         <a href="#" class="new-btn-0">退出登录</a>
+    </div>
+
+    <div class="foot_tab">
+
+        <a href="#">
+            <img src="../../assets/images/common/home.png">
+            <p>首页</p>
+        </a>
+        <a href="#">
+            <img src="../../assets/images/common/category.png">
+            <p>分类</p>
+        </a>
+        <a href="#">
+            <img src="../../assets/images/common/category.png">
+            <p  >购物车</p>
+        </a>
+        <a href="#" class="on">
+            <img src="../../assets/images/common/profile.png">
+            <p>我的</p>
+        </a>
     </div>
 </div>
 </body>

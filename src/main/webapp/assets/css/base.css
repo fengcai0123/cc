@@ -156,6 +156,45 @@ a {
     display: flex
 }
 
+.foot_tab{
+    border-top:0.015rem solid #faf8f8;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    position: fixed;
+    z-index: 9099;
+    background-color: #fff;
+    height: .49rem;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.foot_tab a {
+
+    float: left;
+    width: 25%;
+    text-align: center;
+    position: relative;
+    z-index: 0;
+}
+
+.foot_tab a img {
+    margin-top: 0.06rem;
+    width: .24rem;
+}
+
+.foot_tab a p {
+    font: 400 0.12rem/0.14rem "黑体";
+    color: #666;
+}
+
+.foot_tab a.on p {
+    color: #abd13e;
+}
+
+
 /*.new_goods_buy:after {
     content: "";
     display: block;
@@ -242,6 +281,7 @@ a {
     line-height: .49rem;
     font-size: .16rem;
     width: 50%;
+    border-left: 0.01rem solid #fff;
 }
 
 .new_goods_buy a.no {
@@ -2538,6 +2578,7 @@ a.none_bg {
 }
 
 .buy_top .buy_btn {
+
     text-align: center;
     margin: .115rem 0 0
 }
