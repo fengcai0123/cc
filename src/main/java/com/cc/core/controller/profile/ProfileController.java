@@ -32,10 +32,10 @@ public class ProfileController {
         model.addAttribute("message","hello world");
         return "index";
     }*/
- @RequestMapping("/index")
+/* @RequestMapping("/index")
  public String mainIndex( Model model){
      return "index";
- }
+ }*/
 
     @RequestMapping("/user")
     public String allOrderGoodList(Model model){
@@ -87,6 +87,20 @@ public class ProfileController {
             System.out.println("orderGoodControllerAllOrderTest:" +category.getGoodsName()+"  id="+category.getOrderId());
         }
         return JSONArray.toJSONString(orderGoodsList);
+    }
+
+    @RequestMapping("/index")
+    public String index(Model model){
+        List<Goods> goodsList = goodsService.findAll();
+        model.addAttribute("goodsList",goodsList);
+        return "redirect:/goods/zeptoIndex";
+    }
+
+    @RequestMapping("/cart")
+    public String profile(Model model){
+        List<Goods> goodsList = goodsService.findAll();
+        model.addAttribute("goodsList",goodsList);
+        return "redirect:/cart/list";
     }
 
  /*   @RequestMapping("/categoryGoodsList")

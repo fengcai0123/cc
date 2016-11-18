@@ -1,24 +1,26 @@
 package com.cc.core.controller;
 
 import com.cc.core.entity.good.Goods;
+import com.cc.core.filter.Token;
 import com.cc.core.service.GoodsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Created by yonghuo.chen on 16/10/11.
  */
-@CrossOrigin(maxAge = 3600)
 @Controller
-@RequestMapping("/order")
-public class OrderDetailController {
+@RequestMapping("/main")
+
+public class MainController {
     @Autowired
     private GoodsService goodsService;
 
@@ -29,7 +31,7 @@ public class OrderDetailController {
         return "index";
     }*/
 
-/*    @RequestMapping("/list")
+    @RequestMapping("/list")
     public String goodList(Model model){
         List<Goods> goodsList = goodsService.findAll();
         model.addAttribute("goodsList",goodsList);
@@ -38,14 +40,16 @@ public class OrderDetailController {
 
     @RequestMapping("/categoryGoodsList")
     public String categoryGoodsList(Model model){
-        *//*long cateId=2;
-        List<Goods> goodsList = goodsService.findListByCateId(cateId);*//*
+        /*long cateId=2;
+        List<Goods> goodsList = goodsService.findListByCateId(cateId);*/
         List<Goods> goodsList = goodsService.findAll();
         model.addAttribute("goodsList",goodsList);
         return "categoryGoodsList";
     }
+
+    @Token(save=true)
     @RequestMapping("/add")
-    *//*@Token(save = true)*//*
+    /*@Token(save = true)*/
     public String add(@RequestParam("categoryId")long categId,@RequestParam("name")String name,
                       @RequestParam("number")int number,@RequestParam("weight")double weight,
                       @RequestParam("marketPrice")double marketPrice,@RequestParam("shopPrice")double shopPrice,
@@ -66,8 +70,8 @@ public class OrderDetailController {
         return "goodsList";
     }
 
-    @RequestMapping("/del")
-    public String del(@RequestParam("gid")long gid, Model model){
+   /* @RequestMapping("/del")
+    public void del(@RequestParam("gid")long gid, Model model){
         if(String.valueOf(gid)!=null &&String.valueOf(gid)!=""){
             System.out.println("gid"+gid);
             goodsService.del(gid);
@@ -75,63 +79,54 @@ public class OrderDetailController {
         else{
             System.out.print("controller del gid为空");
         }
-        List<Goods> goodsList=goodsService.findAll();
+        *//*List<Goods> goodsList=goodsService.findAll();
         model.addAttribute("goodsList",goodsList);
-        return "goodsList";
+        return "goodsList";*//*
     }*/
 
-    @RequestMapping("/orderDetail")
-    //public String goodsDetail(@RequestParam("gid")long gid, Model model){
-    public String goodsDetail( Model model){
-
-       /* Goods goods = goodsService.findById(gid);
-        model.addAttribute("goods",goods);*/
-        return "goodsDetail";
-    }
-
-/*    @CrossOrigin(origins="http://localhost:8182/")*/
-    @RequestMapping("/confirm/{gid}")
-
-    //public String goodsDetail(@RequestParam("gid")long gid, Model model){
-    public String orderConfirm(@PathVariable long gid, Model model, HttpServletRequest req, HttpServletResponse res){
-
-        /*res.setHeader("P3P", "CP=CAO PSA OUR");
-        res.addHeader("Access-Control-Allow-Origin", "*");*/
-        /*String callback=req.getParameter("callbackparam");
-        try {
-            res.getWriter().write(callback+"");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }*/
+    @RequestMapping("/detail/{gid}")
+  public String goodsDetail(@PathVariable long gid, HttpServletRequest request, Model model){
+  /*public String goodsDetail(  Model model){
+        long gid=95;*/
+      //  long gid=Long.parseLong(request.getParameter("gid"));
+        if(!Objects.equals(String.valueOf(gid), "")) {
+            System.out.println("main_detail_gid==" + gid);
+        }
         Goods goods = goodsService.findById(gid);
         model.addAttribute("goods",goods);
-        return "confirm";
+        return "redirect:/goods/detail";
     }
 
-    @RequestMapping("/address")
-    //public String goodsDetail(@RequestParam("gid")long gid, Model model){
-    public String address( Model model){
-
-       /* Goods goods = goodsService.findById(gid);
-        model.addAttribute("goods",goods);*/
-        return "address";
+    @RequestMapping("/cart")
+  //  public String goodsDetail(@RequestParam("gid")long gid, Model model){
+  public String goodsCart(  Model model){
+        long gid=95;
+        Goods goods = goodsService.findById(gid);
+        model.addAttribute("goods",goods);
+         return "redirect:/cart/list";
     }
 
-    @RequestMapping("/pay")
-    //public String goodsDetail(@RequestParam("gid")long gid, Model model){
-    public String orderPay( Model model){
+    @RequestMapping("/zeptoIndex")
+    public String index( Model model){
 
-       /* Goods goods = goodsService.findById(gid);
-        model.addAttribute("goods",goods);*/
-        return "pay";
+        List<Goods> goods = goodsService.findAll();
+        model.addAttribute("goods",goods);
+        return "zeptoIndex";
+    }
+    @RequestMapping("/profile")
+    public String indexProfile( Model model){
+        return "redirect:/user/profile";
     }
 
-    @RequestMapping("/goPay")
-    //public String goodsDetail(@RequestParam("gid")long gid, Model model){
-    public String orderGoPay( Model model){
-
-       /* Goods goods = goodsService.findById(gid);
-        model.addAttribute("goods",goods);*/
-        return "goPay";
+   /* @RequestMapping("/cart")
+    public String indexCart( Model model){
+        return "redirect:/cart/list";
     }
+*/
+    @RequestMapping("/zeptoDetail")
+    public String zeptoDetail( Model model){
+        return "zeptoDetail";
+    }
+
+
 }

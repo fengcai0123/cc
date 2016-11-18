@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <%@ page contentType="text/html; UTF-8" language="java" pageEncoding="UTF-8" %>
-<%@ taglib prefix="C" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <html>
@@ -9,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <link rel="stylesheet" type="text/css" href="../../assets/css/base.css">
     <script src="../../assets/js/zepto/zepto.js"></script>
+    <script src="../../assets/js/jquery-1.4.2.min.js"></script>
 
 </head>
 <body>
@@ -20,14 +20,15 @@
         })
     });
 
-    function goDetail() {
+    function goDetail(${gitem.id}) {
+        var gid=${gitem.id};
         $.ajax({
             type:"post",
-           url:"detail",
-            async:false,
-            success(data){
-                location.href="detail";
-            }
+           url:"/detail",
+            data:{
+                'gid':gid
+            },
+            dataType:"json",
         });
     }
 </script>
@@ -107,16 +108,19 @@
                          style="opacity: 1;">
                 </a>
             </li>
+            <c:forEach items="${goods}"  var="gitem">
             <li class="list00">
-                <%--<a title="" href="https://m.benlai.com/qz/product/290426" target="_self">--%>
-                <a title="" href="javascript:void(0)" target="_self" onclick="goDetail()">
+                <a title="" href="${ctx}/goods/detail/${gitem.id}" target="_self">
+                <%--<a title="" href="javascript:void(0)" target="_self" onclick="goDetail(${gitem.id})">--%>
                     <div class="time" style="display:none" id="countdown_307" data-starttime=" 0" data-endtime="0"><font
                         id="hourSpan307"></font>:<font id="minusSpan307"></font>:<font id="secondSpan307"></font></div>
                     <img alt=""
                          src="//image2.benlailife.com/AppHomePageImage/3ab4f9f33dbb42bf89ad95cce85f711d_n-n.jpg?imageView2/2/w/1242/format/webp"
                          style="opacity: 1;">
+                    <div>${gitem.id}</div>
                 </a>
             </li>
+            </c:forEach>
         </ul>
     </div>
 
@@ -128,10 +132,10 @@
             <img src="../../assets/images/common/home.png">
             <p>首页</p>
         </a>
-        <a href="#">
+        <%--<a href="#">
             <img src="../../assets/images/common/category.png">
             <p>分类</p>
-        </a>
+        </a>--%>
         <a href="cart">
             <img src="../../assets/images/common/category.png">
             <p  >购物车</p>

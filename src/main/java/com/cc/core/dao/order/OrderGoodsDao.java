@@ -10,4 +10,5 @@ import java.util.List;
 public interface OrderGoodsDao {
     List<OrderGoods> selectByOrderIdAndUserId(long userId);
 
+   void insertOrder(List<OrderGoods> orderGoodsList);
 }

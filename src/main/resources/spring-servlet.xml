@@ -34,10 +34,9 @@
     <mvc:interceptors>
         <mvc:interceptor>
             <mvc:mapping path="/**"/>
-            <bean class="com.cc.core.filter.TokenInterceptor"/>
+            <bean class="com.cc.core.common.SameUrlDataInterceptor"/>
         </mvc:interceptor>
     </mvc:interceptors>
-
 
 
     <!--静态资源文件配置-->

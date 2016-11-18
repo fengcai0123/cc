@@ -24,4 +24,9 @@ public class OrderGoodsImpl implements OrderGoodsDao {
         Query query=sessionFactory.getCurrentSession().createQuery(hql);
         return query.list();
     }
+
+    @Override
+    public void insertOrder(List<OrderGoods> orderGoodsList) {
+        String hql="insert OrderGoods oGoods values"
+    }
 }

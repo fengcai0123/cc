@@ -6,6 +6,7 @@ import com.cc.core.service.GoodsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -16,6 +17,7 @@ import java.util.List;
  */
 @Controller
 @RequestMapping("/goods")
+
 public class GoodController {
     @Autowired
     private GoodsService goodsService;
@@ -42,6 +44,8 @@ public class GoodController {
         model.addAttribute("goodsList",goodsList);
         return "categoryGoodsList";
     }
+
+    @Token(save=true)
     @RequestMapping("/add")
     /*@Token(save = true)*/
     public String add(@RequestParam("categoryId")long categId,@RequestParam("name")String name,
@@ -65,7 +69,7 @@ public class GoodController {
     }
 
     @RequestMapping("/del")
-    public String del(@RequestParam("gid")long gid, Model model){
+    public void del(@RequestParam("gid")long gid, Model model){
         if(String.valueOf(gid)!=null &&String.valueOf(gid)!=""){
             System.out.println("gid"+gid);
             goodsService.del(gid);
@@ -73,15 +77,15 @@ public class GoodController {
         else{
             System.out.print("controller del gid为空");
         }
-        List<Goods> goodsList=goodsService.findAll();
+        /*List<Goods> goodsList=goodsService.findAll();
         model.addAttribute("goodsList",goodsList);
-        return "goodsList";
+        return "goodsList";*/
     }
 
-    @RequestMapping("/detail")
-  //  public String goodsDetail(@RequestParam("gid")long gid, Model model){
-  public String goodsDetail(  Model model){
-        long gid=95;
+    @RequestMapping("/detail/{gid}")
+  public String goodsDetail(@PathVariable long gid, Model model){
+  /*public String goodsDetail(  Model model){
+        long gid=95;*/
         Goods goods = goodsService.findById(gid);
         model.addAttribute("goods",goods);
         return "goodsDetail";
@@ -93,7 +97,7 @@ public class GoodController {
         long gid=95;
         Goods goods = goodsService.findById(gid);
         model.addAttribute("goods",goods);
-        return "cart";
+         return "redirect:/cart/list";
     }
 
     @RequestMapping("/zeptoIndex")
@@ -108,11 +112,11 @@ public class GoodController {
         return "redirect:/user/profile";
     }
 
-    @RequestMapping("/cart")
+   /* @RequestMapping("/cart")
     public String indexCart( Model model){
         return "redirect:/cart/list";
     }
-
+*/
     @RequestMapping("/zeptoDetail")
     public String zeptoDetail( Model model){
         return "zeptoDetail";

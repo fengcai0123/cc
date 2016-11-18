@@ -103,6 +103,21 @@
         </div>
     </div>
 </div>
+<div class="foot_tab">
+
+    <a href="index">
+        <img src="../../assets/images/common/home.png">
+        <p>首页</p>
+    </a>
+    <a href="#" class="on">
+        <img src="../../assets/images/common/category.png">
+        <p  >购物车</p>
+    </a>
+    <a href="profile" >
+        <img src="../../assets/images/common/profile.png">
+        <p>我的</p>
+    </a>
+</div>
 <%--<div data-role="page" id="goodsdetail">
     <div>cart</div>
 

@@ -13,6 +13,7 @@
     <style>
         .confirm_goods{
             width: 100%;
+            height:1rem;
         }
         .confirm_goods ul{
             width: 100%;
@@ -28,13 +29,13 @@
         }
         .confirm_goods .confirm_goods_name{
             float: left;
-            height: 0.85rem;
-            line-height: 0.85rem;
             width: 60%;
+
         }
         .confirm_goods .confirm_goods_name p{
-            height: 0.55rem;
-            line-height: 0.55rem;
+            padding-top: 0.3rem;
+            float: left;
+            display: block;
         }
         .confirm_goods .confirm_goods_name em{
             height: 0.30rem;
@@ -42,16 +43,23 @@
         }
         .confirm_goods .confirm_goods_price{
             float: right;
-            width: 20%;
+            padding-right: 2%;
+            width: 18%;
             height: 0.85rem;
             line-height: 0.85rem;
+        }
+        .confirm_goods .confirm_goods_price em{
+            float: right;
         }
     </style>
     <script>
        function goPay() {
            $.ajax( {
                type:"post",
-               url:"goPay",
+               url:"/goPay",
+               data:{
+
+               },
                async:false,
                success(data)
                {
@@ -126,11 +134,11 @@
                                 <img src="../../assets/images/common/face1.png">
                             </li>
                             <li class="confirm_goods_name">
-                                <p>商品名称</p>
+                                <p>${goods.name}</p>
                                 <em>X 14</em>
                             </li>
                             <li class="confirm_goods_price">
-                                <em>＋￥148.00</em>
+                                <em>￥${goods.shopPrice}</em>
                             </li>
                         </ul>
                     </dl>
@@ -152,7 +160,7 @@
                             <ul>
                                 <li>
                                     <p>商品金额</p>
-                                    <em>＋￥148.00</em>
+                                    <em>￥${goods.shopPrice}</em>
                                 </li>
                             </ul>
                         </dd>
@@ -160,7 +168,7 @@
                             <ul>
                                 <li>
                                     <p>运费</p>
-                                    <em>＋￥148.00</em>
+                                    <em>￥148.00</em>
                                 </li>
                             </ul>
                         </dd>

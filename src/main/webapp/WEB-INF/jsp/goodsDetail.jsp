@@ -215,15 +215,19 @@
         <%--<div id="benlai_banner" class="new_goods_pic" style="margin-top: 0.44rem">
             <div data-module="content" class="wap_pic">--%>
         <div>
-            <div>
-                <a><img
-                    src="https://image5.benlailife.com/ProductImages/000/000/041/216/app/33815c40-0533-405c-8edf-4bebd5813eb8.jpg"></a>
-                <%-- <a ><img src="https://image1.benlailife.com/ProductImages/000/000/041/216/app/2ddea77c-0ed3-49f2-8e1a-200dcc5a51f3.jpg"></a>
-                 <a ><img
-                     src="https://image1.benlailife.com/ProductImages/000/000/041/216/app/07a7302d-1888-4acf-b78b-27cd4ec769bb.jpg"></a>
-                 <a ><img src="https://image1.benlailife.com/ProductImages/000/000/041/216/app/4b502f20-4449-46be-ab5b-cfcd72d00145.jpg"></a>
-                 <a  ><img src="https://image5.benlailife.com/ProductImages/000/000/041/216/app/33815c40-0533-405c-8edf-4bebd5813eb8.jpg"></a>
-                 <a  ><img src="https://image1.benlailife.com/ProductImages/000/000/041/216/app/2ddea77c-0ed3-49f2-8e1a-200dcc5a51f3.jpg"></a>--%>
+
+            <a><img
+                src="https://image5.benlailife.com/ProductImages/000/000/041/216/app/33815c40-0533-405c-8edf-4bebd5813eb8.jpg">
+            </a>
+            <a>
+                <img src="../../assets/images/products/01/main/01_0.png">
+            </a>
+            <%-- <a ><img src="https://image1.benlailife.com/ProductImages/000/000/041/216/app/2ddea77c-0ed3-49f2-8e1a-200dcc5a51f3.jpg"></a>
+             <a ><img
+                 src="https://image1.benlailife.com/ProductImages/000/000/041/216/app/07a7302d-1888-4acf-b78b-27cd4ec769bb.jpg"></a>
+             <a ><img src="https://image1.benlailife.com/ProductImages/000/000/041/216/app/4b502f20-4449-46be-ab5b-cfcd72d00145.jpg"></a>
+             <a  ><img src="https://image5.benlailife.com/ProductImages/000/000/041/216/app/33815c40-0533-405c-8edf-4bebd5813eb8.jpg"></a>
+             <a  ><img src="https://image1.benlailife.com/ProductImages/000/000/041/216/app/2ddea77c-0ed3-49f2-8e1a-200dcc5a51f3.jpg"></a>--%>
             </div>
             <ul data-module="nav">
                 <a class=""></a>
@@ -254,9 +258,9 @@
         <div class="pItems">
             <dl>
                 <dt>
-                    <span>促销价 :</span>
+                    <span>促销价 :</span>${goods.id}
                     <span class="p">￥${goods.shopPrice}</span>
-                    <span class="s">￥${goods.shopPrice1}</span>
+                    <span class="s">￥${goods.marketPrice}</span>
                 </dt>
                 <dd class="clearfix">
                     <div class="even">品牌：焕橙</div>
@@ -321,7 +325,7 @@
 
         <a href="javascript:void (0)" onclick="addProductToCartQty(41216,1,0,1)" class="btn">加入购物车</a>
 
-        <a href="javascript:void (0)" onclick="goBuy()" class="buy_btn">立即购买</a>
+        <a href="${ctx}/order/confirm/${goods.id}"   class="buy_btn">立即购买</a>
     </div>
 </div>
 

@@ -188,15 +188,11 @@
 
     <div class="foot_tab">
 
-        <a href="#">
+        <a href="index">
             <img src="../../assets/images/common/home.png">
             <p>首页</p>
         </a>
-        <a href="#">
-            <img src="../../assets/images/common/category.png">
-            <p>分类</p>
-        </a>
-        <a href="#">
+        <a href="cart">
             <img src="../../assets/images/common/category.png">
             <p  >购物车</p>
         </a>

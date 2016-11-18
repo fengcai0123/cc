@@ -33,4 +33,9 @@ public class OrderInfoImpl implements OrderInfoDao {
         return (OrderInfo) query.uniqueResult();
     }
 
+    @Override
+    public void insertOrderInfo(OrderInfo orderInfo) {
+
+    }
+
 }

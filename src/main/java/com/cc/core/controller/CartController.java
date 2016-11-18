@@ -84,4 +84,18 @@ public class CartController {
         model.addAttribute("goodsList",goodsList);
         return "goodsDetail";
     }
+
+    @RequestMapping("/index")
+    public String index(Model model){
+        List<Goods> goodsList = goodsService.findAll();
+        model.addAttribute("goodsList",goodsList);
+        return "redirect:/goods/zeptoIndex";
+    }
+
+    @RequestMapping("/profile")
+    public String profile(Model model){
+        List<Goods> goodsList = goodsService.findAll();
+        model.addAttribute("goodsList",goodsList);
+        return "redirect:/goods/profile";
+    }
 }
