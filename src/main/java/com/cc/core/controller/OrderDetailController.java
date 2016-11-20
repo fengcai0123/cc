@@ -1,7 +1,9 @@
 package com.cc.core.controller;
 
+import com.cc.core.common.GetNowTime;
 import com.cc.core.entity.good.Goods;
 import com.cc.core.service.GoodsService;
+import com.cc.core.vo.OrderInfoVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -10,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -21,13 +24,16 @@ import java.util.List;
 public class OrderDetailController {
     @Autowired
     private GoodsService goodsService;
+    GetNowTime getNowTime=new GetNowTime();
 
- /*   @RequestMapping("/helloWorld")
-    public String helloWorld(Model model){
-
+    @RequestMapping("/confirmOrder")
+    @ResponseBody
+    public String confirmOrdrer(@RequestBody  OrderInfoVo orderInfoVo, Model model){
+       String nowTime= getNowTime.nowTime();
+        System.out.print("当前时间=== "+nowTime);
         model.addAttribute("message","hello world");
-        return "index";
-    }*/
+        return "goPay";
+    }
 
 /*    @RequestMapping("/list")
     public String goodList(Model model){

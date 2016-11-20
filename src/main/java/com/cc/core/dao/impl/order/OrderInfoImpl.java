@@ -3,6 +3,7 @@ package com.cc.core.dao.impl.order;
 import com.cc.core.dao.order.OrderInfoDao;
 import com.cc.core.entity.good.Goods;
 import com.cc.core.entity.order.OrderInfo;
+import com.cc.core.vo.OrderInfoVo;
 import org.hibernate.Query;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,7 +36,7 @@ public class OrderInfoImpl implements OrderInfoDao {
 
     @Override
     public void insertOrderInfo(OrderInfo orderInfo) {
-
+        sessionFactory.getCurrentSession().save(orderInfo);
     }
 
 }

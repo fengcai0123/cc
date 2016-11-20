@@ -27,6 +27,12 @@ public class OrderGoodsImpl implements OrderGoodsDao {
 
     @Override
     public void insertOrder(List<OrderGoods> orderGoodsList) {
-        String hql="insert OrderGoods oGoods values"
+       if(orderGoodsList!=null&&!orderGoodsList.isEmpty()&&orderGoodsList.size()>0){
+        for(OrderGoods orderGoods:orderGoodsList){
+            sessionFactory.getCurrentSession().save(orderGoods);
+            System.out.println("save== "+orderGoods.getGoodsName());
+        }
+       }
+
     }
 }

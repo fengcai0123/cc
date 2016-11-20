@@ -12,4 +12,5 @@ public interface OrderInfoService {
 
     List<OrderGoods> findAllOrderGoodsList(long userId);
      OrderInfo findByOrderId(long userId);
+    void addOrderInfo(OrderInfo orderInfo);
 }

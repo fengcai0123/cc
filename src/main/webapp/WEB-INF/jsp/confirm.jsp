@@ -54,16 +54,22 @@
     </style>
     <script>
        function goPay() {
+       var params={};
+       params.consignee=$("#consignee").val();
+       params.address=$("#address").val();
+       params.mobile=$("#mobile").val();
+       params.orderAmount=$("#orderAmount").val();
+      params.shippingFee=$("#shippingFee").val();
            $.ajax( {
                type:"post",
-               url:"/goPay",
-               data:{
-
-               },
+               url:"order/confirmOrder",
+               data: params,
+               dataType:"json",
+                contentType: "application/json; charset=utf-8",
                async:false,
                success(data)
                {
-                  location.href ="goPay";
+
                }
            });
        }
@@ -110,8 +116,8 @@
                 <dl>
                     <dt>配送至：九亭大街-松江区</dt>
                     <dd>
-                        <p>应付金额：<span>￥148.00</span></p>
-                        <a href="javascript:void(0);" name="subOrder" data-totalamt="148.00" id="confirmOrder" onclick="goPay();" >提交订单</a>
+                        <p>应付金额：<span id="orderAmount">￥148.00</span></p>
+                        <a href="javascript:void(0);" name="subOrder" data-totalamt="148.00" id="confirmOrder" onclick=" ();" >提交订单</a>
                     </dd>
                 </dl>
             </div>
@@ -119,10 +125,10 @@
                 <div class="ordernew_list">
                     <dl class="adr">
                         <a href="javascript:;" id="showAddress">
-                            <p class="name">陈永火</p>
+                            <p class="name" id="consignee">陈永火</p>
                             <p class="ico">默认</p>
-                            <p class="tel">18659506072</p>
-                            <p class="text">广东省 深圳市 宝安区 九亭大街-松江区</p>
+                            <p class="tel" id="mobile">18659506072</p>
+                            <p class="text" id="address">广东省 深圳市 宝安区 九亭大街-松江区</p>
                         </a>
                     </dl>
 
@@ -160,7 +166,7 @@
                             <ul>
                                 <li>
                                     <p>商品金额</p>
-                                    <em>￥${goods.shopPrice}</em>
+                                    <em id="">￥${goods.shopPrice}</em>
                                 </li>
                             </ul>
                         </dd>
@@ -168,7 +174,7 @@
                             <ul>
                                 <li>
                                     <p>运费</p>
-                                    <em>￥148.00</em>
+                                    <em id="shippingFee">￥148.00</em>
                                 </li>
                             </ul>
                         </dd>
